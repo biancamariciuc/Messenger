@@ -37,15 +37,36 @@ class Server:
             print_log("Server error", str(e))
 
     def handle_client(self, client_socket, address):
-        #genereaza ID ul unic  si pastreaza doar primele 8 caractere din el
         client_id = str(uuid.uuid4())[:8]
-        self.clients[client_socket] = client_id
 
-        print_log("Connection", f"New connection from {address} assigned ID: {client_id}")
+        try:
+            client_id = str(uuid.uuid4())[:8]
+            username = client_socket.recv(1024).decode(FORMAT)
+            self.clients[client_socket] = username
 
-        welcome_msg = f"Hey! Your ID is {client_id}"
-        client_socket.send(welcome_msg.encode(FORMAT))
-        pass
+            print_log("Connection", f"New connection from {address} assigned ID: {client_id} and the username: {username}")
+            connected = True
+            while connected:
+                try:
+                    msg = client_socket.recv(1024).decode(FORMAT)
+
+                    if not msg:
+                        connected = False
+                        break
+
+                    print_log("Message", f"[{username}]: {msg}")
+
+                except:
+                    connected = False
+                    break
+        except Exception as e:
+            print_log("Error", f"Error in connection: {e}")
+            client_socket.close()
+        finally:
+            client_socket.close()
+            if client_socket in self.clients:
+                del self.clients[client_socket]
+            print_log("Disconnect", f"{username} has disconnected.")
 
 
 if __name__ == "__main__":
