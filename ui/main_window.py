@@ -1,8 +1,7 @@
-import tkinter as tk
-from tkinter import messagebox
 from client.client import Client
-from ui.logic.connect_helper import on_click_connect
+from ui.logic.connect_helper import *
 from common.config import SERVER_HOST, SERVER_PORT
+from server.helper_functions.users import get_users
 
 
 from ui.window_helpers import center_window, clear_window
@@ -32,6 +31,14 @@ class Main_window(tk.Tk):
         chat_w = WIDTH - sidebar_w
 
         self.user_list = create_sidebar(self, x=0, y=0, width=sidebar_w, height=HEIGHT)
+        users_list = get_users()
+        current_user = self.client.username
+
+        for user_dict in users_list:
+            username = user_dict.get("username", "Unknown")
+            if username == current_user:
+                continue
+            add_user_to_list(self.user_list, username)
 
         self.chat_display, self.msg_input, self.send_btn = create_chatbox(self, x=sidebar_w, y=0, width=chat_w, height=HEIGHT)
 

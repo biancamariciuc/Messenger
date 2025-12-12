@@ -21,7 +21,6 @@ class Client:
 
             threading.Thread(target=self.listen_for_messages, daemon=True).start()
             return True
-            # input("Press Enter to exit...")
 
         except ConnectionRefusedError:
             print_log("Client error", "server is running?")

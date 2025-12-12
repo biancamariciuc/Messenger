@@ -2,7 +2,7 @@ import socket
 import threading
 import uuid
 from common.config import SERVER_HOST, SERVER_PORT, FORMAT, print_log
-from loggin_client import handle_login
+from loggin_handler import handle_login
 
 
 class Server:

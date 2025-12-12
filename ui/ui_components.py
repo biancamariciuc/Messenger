@@ -53,3 +53,9 @@ def create_chatbox(window, x, y, width, height):
     send_btn.place(x=width-80, y=height-50, width=60, height=35)
 
     return chat_display, msg_input, send_btn
+
+def add_user_to_list(listbox, username):
+    display_text = f"  {username}"
+    listbox.insert(tk.END, display_text)
+    last_index = listbox.size() - 1
+    listbox.itemconfig(last_index, {'bg': '#f0f0f0', 'fg': 'black'})
