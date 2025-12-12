@@ -1,6 +1,6 @@
 import socket
 import threading
-from common.config import SERVER_HOST, SERVER_PORT, FORMAT, print_log
+from common.config import FORMAT, print_log
 
 
 class Client:
@@ -17,7 +17,6 @@ class Client:
             self.client_socket.connect((self.host, self.port))
 
             self.username = username
-
             self.client_socket.send(username.encode(FORMAT))
 
             threading.Thread(target=self.listen_for_messages, daemon=True).start()

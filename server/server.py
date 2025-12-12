@@ -2,6 +2,7 @@ import socket
 import threading
 import uuid
 from common.config import SERVER_HOST, SERVER_PORT, FORMAT, print_log
+from loggin_client import handle_login
 
 
 class Server:
@@ -37,11 +38,12 @@ class Server:
             print_log("Server error", str(e))
 
     def handle_client(self, client_socket, address):
-        client_id = str(uuid.uuid4())[:8]
-
         try:
             client_id = str(uuid.uuid4())[:8]
             username = client_socket.recv(1024).decode(FORMAT)
+
+            handle_login(username)
+
             self.clients[client_socket] = username
 
             print_log("Connection", f"New connection from {address} assigned ID: {client_id} and the username: {username}")
