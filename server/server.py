@@ -1,8 +1,10 @@
 import socket
 import threading
 import uuid
+import json
 from common.config import SERVER_HOST, SERVER_PORT, FORMAT, print_log
 from loggin_handler import handle_login
+from helper_functions.users import get_users
 
 
 class Server:
@@ -56,7 +58,13 @@ class Server:
                         connected = False
                         break
 
-                    print_log("Message", f"[{username}]: {msg}")
+                    if msg == "CMD:GET_USERS":
+                        users_list = get_users()
+                        data_str = json.dumps(users_list)
+                        client_socket.send(f"CMD_LIST:{data_str}".encode(FORMAT))
+                        print_log("Action", f"Sent user list to {username}")
+                    else:
+                        print_log("Message", f"[{username}]: {msg}")
 
                 except:
                     connected = False

@@ -31,13 +31,31 @@ def create_submit_button(window, text, command, x, y, width, height):
 
 
 def create_sidebar(window, x, y, width, height):
-    frame = tk.Frame(window, width=width, height=height, bg="#f0f0f0")
+    frame = tk.Frame(window, width=width, height=height, bg="white")
     frame.place(x=x, y=y)
 
-    user_list = tk.Listbox(frame, font=(FONT, 10), bg="white")
-    user_list.place(x=10, y=10, width=width - 20, height=height - 20)
+    search_entry = tk.Entry(frame, font=(FONT, 10), bg="white", fg="black", relief="flat")
+    search_entry.place(x=10, y=15, width=width - 20, height=30)
+    placeholder = "Search..."
+    search_entry.insert(0, placeholder)
 
-    return user_list
+    def on_focus_in(event):
+        if search_entry.get() == placeholder:
+            search_entry.delete(0, "end")
+            search_entry.config(fg="black")
+
+    def on_focus_out(event):
+        if search_entry.get() == "":
+            search_entry.insert(0, placeholder)
+            search_entry.config(fg="grey")
+
+    search_entry.bind("<FocusIn>", on_focus_in)
+    search_entry.bind("<FocusOut>", on_focus_out)
+
+    user_list = tk.Listbox(frame, font=(FONT, 10), bg="white")
+    user_list.place(x=10, y=60, width=width - 20, height=height - 70)
+
+    return user_list, search_entry
 
 def create_chatbox(window, x, y, width, height):
     frame = tk.Frame(window, width=width, height=height, bg="white")
