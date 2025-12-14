@@ -11,6 +11,7 @@ class Client:
         self.client_socket = None
         self.username = None
         self.on_receive_user_list = None
+        self.on_receive_message = None
 
     def connect(self, username):
         try:
@@ -31,18 +32,37 @@ class Client:
 
     def request_users(self):
         if self.client_socket:
-            self.client_socket.send("CMD:GET_USERS".encode(FORMAT))
+            self.client_socket.send("GET_USERS".encode(FORMAT))
+
+    def send_chat_message(self, receiver_username, message):
+        if self.client_socket:
+            format = {
+                "receiver": receiver_username,
+                "content": message
+            }
+            msg = f"SEND_MSG:{json.dumps(format)}"
+            self.client_socket.send(msg.encode(FORMAT))
 
     def listen_for_messages(self):
         while True:
             try:
                 message = self.client_socket.recv(1024).decode(FORMAT)
 
-                if message.startswith("CMD_LIST:"):
-                    json_str = message.replace("CMD_LIST:", "")
+                if message.startswith("LIST_USERS:"):
+                    json_str = message.replace("LIST_USERS:", "")
                     data = json.loads(json_str)
                     if self.on_receive_user_list:
                         self.on_receive_user_list(data)
+                elif message.startswith("RECEIVE_MSG:"):
+                    json_str = message.replace("RECEIVE_MSG:", "")
+                    data = json.loads(json_str)
+
+                    sender = data["sender"]
+                    content = data["content"]
+
+                    if self.on_receive_message:
+                        self.on_receive_message(sender, content)
+
             except Exception as e:
                 print_log("Error", "Connection lost")
                 break

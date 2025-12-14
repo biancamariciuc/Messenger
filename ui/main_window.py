@@ -1,6 +1,7 @@
 from client.client import Client
 from ui.logic.connect_helper import *
-from ui.logic.update_user_list import *
+from ui.logic.user_list_helper import *
+from ui.logic.message_helper import *
 from common.config import SERVER_HOST, SERVER_PORT
 
 
@@ -9,25 +10,27 @@ from ui.window_params import WIDTH, HEIGHT, TITLE_X, TITLE_Y, GAP
 from ui.ui_components import *
 
 
+
 class Main_window(tk.Tk):
     def __init__(self, title):
         super().__init__()
         self.title(title)
         center_window(self, WIDTH, HEIGHT)
         self.client = Client(SERVER_HOST, SERVER_PORT)
-        self.client.on_receive_user_list = self.handle_server_user_list
+        self.client.on_receive_user_list = lambda data: handle_server_user_list(self, data)
+        self.client.on_receive_message = lambda sender, content: handle_incoming_message(self, sender, content)
+        self.selected_user = None
         self.show_login_page()
 
     def show_login_page(self):
         clear_window(self)
         create_title_box(self, "Welcome!", TITLE_X, TITLE_Y, 30)
 
-        self.username = create_input_box(self, "Type here your username...", TITLE_X, TITLE_Y + GAP, 400, 30, 12)
-        create_submit_button(self, "Login", lambda: on_click_connect(self), TITLE_X, TITLE_Y + 150, 200, 40)
+        submit_action = lambda event=None: on_click_connect(self)
 
-    def handle_server_user_list(self, user_data_from_server):
-        current_search = self.search_bar.get()
-        refresh_user_list(self.user_list, user_data_from_server, self.client.username, current_search)
+        self.username = create_input_box(self, "Type here your username...", TITLE_X, TITLE_Y + GAP, 400, 30, 12)
+        self.username.bind('<Return>', submit_action)
+        create_submit_button(self, "Login", submit_action, TITLE_X, TITLE_Y + 150, 200, 40)
 
     def show_message_page(self):
         clear_window(self)
@@ -36,16 +39,18 @@ class Main_window(tk.Tk):
         chat_w = WIDTH - sidebar_w
 
         self.user_list, self.search_bar = create_sidebar(self, x=0, y=0, width=sidebar_w, height=HEIGHT)
+        self.user_list.bind('<<ListboxSelect>>', lambda event: on_select_user(self, event))
 
         search_action = lambda event: self.client.request_users()
         self.search_bar.bind('<Return>', search_action)
 
         self.client.request_users()
 
+        submit_action = lambda event=None: send_message(self)
         self.chat_display, self.msg_input, self.send_btn = create_chatbox(self, x=sidebar_w, y=0, width=chat_w, height=HEIGHT)
-        self.send_btn.config(command=self.send_message)
-    def send_message(self):
-        print("Message sent!")
+        self.msg_input.bind('<Return>', submit_action)
+        self.send_btn.config(command=submit_action)
+
 
 if __name__ == '__main__':
     app = Main_window("Messenger")

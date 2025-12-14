@@ -23,3 +23,9 @@ def exists_user(username, users_list):
             user_exists = True
             break
     return user_exists
+
+def search_socket_user(username, dic):
+    for sock, name in dic.items():
+        if name == username:
+            return sock
+    return None

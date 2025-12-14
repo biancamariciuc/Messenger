@@ -7,7 +7,7 @@ def create_title_box(window, content, x, y, size):
 
 
 
-def create_input_box(window, placeholder, x, y, width, height, size):
+def create_input_box(window, placeholder, x, y, width, height, size, anch="center"):
     entry = tk.Entry(window, font=(FONT, size), fg="grey")
     entry.insert(0, placeholder)
 
@@ -17,10 +17,16 @@ def create_input_box(window, placeholder, x, y, width, height, size):
             entry.delete(0, "end")
             entry.config(fg="black")
 
+    def on_focus_out(event):
+        if entry.get() == "":
+            entry.insert(0, placeholder)
+            entry.config(fg="grey")
+
 
     entry.bind("<FocusIn>", on_focus_in)
+    entry.bind("<FocusOut>", on_focus_out)
 
-    entry.place(x=x, y=y, width=width, height=height, anchor="center")
+    entry.place(x=x, y=y, width=width, height=height, anchor=anch)
 
     return entry
 
@@ -31,10 +37,10 @@ def create_submit_button(window, text, command, x, y, width, height):
 
 
 def create_sidebar(window, x, y, width, height):
-    frame = tk.Frame(window, width=width, height=height, bg="white")
+    frame = tk.Frame(window, width=width, height=height, bg="#f0f0f0")
     frame.place(x=x, y=y)
 
-    search_entry = tk.Entry(frame, font=(FONT, 10), bg="white", fg="black", relief="flat")
+    search_entry = tk.Entry(frame, font=(FONT, 10), bg="#f0f0f0", fg="black", relief="flat")
     search_entry.place(x=10, y=15, width=width - 20, height=30)
     placeholder = "Search..."
     search_entry.insert(0, placeholder)
@@ -52,20 +58,19 @@ def create_sidebar(window, x, y, width, height):
     search_entry.bind("<FocusIn>", on_focus_in)
     search_entry.bind("<FocusOut>", on_focus_out)
 
-    user_list = tk.Listbox(frame, font=(FONT, 10), bg="white")
+    user_list = tk.Listbox(frame, font=(FONT, 10), bg="#f0f0f0")
     user_list.place(x=10, y=60, width=width - 20, height=height - 70)
 
     return user_list, search_entry
 
 def create_chatbox(window, x, y, width, height):
-    frame = tk.Frame(window, width=width, height=height, bg="white")
+    frame = tk.Frame(window, width=width, height=height, bg="#f0f0f0")
     frame.place(x=x, y=y)
 
     chat_display = tk.Text(frame, font=(FONT, 10), bg="#fafafa")
     chat_display.place(x=20, y=20, width=width-40, height=height-80)
 
-    msg_input = tk.Entry(frame, font=(FONT, 10), bg="#f0f0f0")
-    msg_input.place(x=20, y=height-50, width=width-110, height=35)
+    msg_input = create_input_box(frame, "Type a message...", 20, height-50, width-110, 35, 10, anch="nw")
 
     send_btn = tk.Button(frame, text="Send", font=(FONT, 10, "bold"), bg="#e1e1e1")
     send_btn.place(x=width-80, y=height-50, width=60, height=35)

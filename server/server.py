@@ -3,8 +3,9 @@ import threading
 import uuid
 import json
 from common.config import SERVER_HOST, SERVER_PORT, FORMAT, print_log
-from loggin_handler import handle_login
+from login_handler import handle_login
 from helper_functions.users import get_users
+from helper_functions.users import search_socket_user
 
 
 class Server:
@@ -58,13 +59,30 @@ class Server:
                         connected = False
                         break
 
-                    if msg == "CMD:GET_USERS":
+                    if msg == "GET_USERS":
                         users_list = get_users()
                         data_str = json.dumps(users_list)
-                        client_socket.send(f"CMD_LIST:{data_str}".encode(FORMAT))
-                        print_log("Action", f"Sent user list to {username}")
-                    else:
-                        print_log("Message", f"[{username}]: {msg}")
+                        client_socket.send(f"LIST_USERS:{data_str}".encode(FORMAT))
+                    elif msg.startswith("SEND_MSG:"):
+                        json_data = msg.replace("SEND_MSG:", "")
+                        data = json.loads(json_data)
+
+                        receiver_user = data["receiver"]
+                        message_content = data["content"]
+
+                        receiver_socket = search_socket_user(receiver_user, self.clients)
+
+                        if receiver_socket:
+                            format = {
+                                "sender": username,
+                                "content": message_content
+                            }
+                            receiver_socket.send(f"RECEIVE_MSG:{json.dumps(format)}".encode(FORMAT))
+                        else:
+                            print_log("Server", "User (receiver) not found!")
+                    else :
+                        print_log("Server", "Unknown command!")
+
 
                 except:
                     connected = False

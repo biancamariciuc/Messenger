@@ -1,0 +1,41 @@
+import tkinter as tk
+from tkinter import messagebox
+
+def handle_incoming_message(window, sender, content):
+
+    window.chat_display.config(state=tk.NORMAL)
+    window.chat_display.insert(tk.END, f"{sender}: {content}\n")
+    window.chat_display.see(tk.END)
+    window.chat_display.config(state=tk.DISABLED)
+
+def send_message(window):
+    text = window.msg_input.get()
+
+    if not text:
+        return
+    if not window.selected_user:
+        messagebox.showwarning("Warning", "Please select a user.")
+        return
+
+    window.client.send_chat_message(window.selected_user, text)
+
+    window.chat_display.config(state=tk.NORMAL)
+    window.chat_display.insert(tk.END, f"Me: {text}\n")
+    window.chat_display.config(state=tk.DISABLED)
+    window.chat_display.see(tk.END)
+
+    window.msg_input.delete(0, tk.END)
+
+def on_select_user(window, event):
+
+    selection = event.widget.curselection()
+    if selection:
+        index = selection[0]
+        data = event.widget.get(index)
+
+        window.selected_user = data.strip()
+
+        window.chat_display.config(state=tk.NORMAL)
+        window.chat_display.insert(tk.END, f"\n--- Chatting with {window.selected_user} ---\n")
+        window.chat_display.config(state=tk.DISABLED)
+        window.chat_display.see(tk.END)

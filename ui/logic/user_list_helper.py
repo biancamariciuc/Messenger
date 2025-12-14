@@ -23,3 +23,7 @@ def add_user_to_list(listbox, username):
     listbox.insert(tk.END, display_text)
     last_index = listbox.size() - 1
     listbox.itemconfig(last_index, {'bg': '#f0f0f0', 'fg': 'black'})
+
+def handle_server_user_list(window, user_data_from_server):
+      current_search = window.search_bar.get()
+      refresh_user_list(window.user_list, user_data_from_server, window.client.username, current_search)
