@@ -5,7 +5,8 @@ from datetime import datetime
 def handle_incoming_message(window, sender, content):
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     window.chat_display.config(state=tk.NORMAL)
-    window.chat_display.insert(tk.END, f"[{current_time}] {sender}: {content}\n")
+    window.chat_display.insert(tk.END, f"{sender}: {content}\n", "other_msg")
+    window.chat_display.insert(tk.END, f"{current_time}\n\n", "other_time")
     window.chat_display.see(tk.END)
     window.chat_display.config(state=tk.DISABLED)
 
@@ -23,7 +24,8 @@ def send_message(window):
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     window.chat_display.config(state=tk.NORMAL)
-    window.chat_display.insert(tk.END, f"[{current_time}] Me: {text}\n")
+    window.chat_display.insert(tk.END, f"me: {text}\n", "self_msg")
+    window.chat_display.insert(tk.END, f"{current_time}\n\n", "self_time")
     window.chat_display.config(state=tk.DISABLED)
     window.chat_display.see(tk.END)
 
@@ -31,15 +33,21 @@ def send_message(window):
 
 
 def handle_history_to_ui(window, history_data):
+    window.chat_header.config(text=f"Chatting with {window.selected_user}")
     window.chat_display.config(state=tk.NORMAL)
     window.chat_display.delete(1.0, tk.END)
-    window.chat_display.insert(tk.END, f"\n--- Chatting with {window.selected_user} ---\n")
+    my_username = window.client.username
     for msg in history_data:
         sender = msg["sender"]
         content = msg["content"]
         timestamp = msg["timestamp"]
 
-        window.chat_display.insert(tk.END, f"[{timestamp}] {sender}: {content}\n")
+        if sender == my_username:
+            window.chat_display.insert(tk.END, f"me: {content}\n", "self_msg")
+            window.chat_display.insert(tk.END, f"{timestamp}\n\n", "self_time")
+        else:
+            window.chat_display.insert(tk.END, f"{sender}: {content}\n", "other_msg")
+            window.chat_display.insert(tk.END, f"{timestamp}\n\n", "other_time")
 
     window.chat_display.config(state=tk.DISABLED)
     window.chat_display.see(tk.END)
@@ -52,10 +60,10 @@ def on_select_user(window, event):
         data = event.widget.get(index)
 
         window.selected_user = data.strip()
+        window.chat_header.config(text=f"{window.selected_user}")
 
         window.chat_display.config(state=tk.NORMAL)
         window.chat_display.delete(1.0, tk.END)
-        window.chat_display.insert(tk.END, f"History: {window.selected_user}...\n")
         window.chat_display.config(state=tk.DISABLED)
         window.chat_display.see(tk.END)
 

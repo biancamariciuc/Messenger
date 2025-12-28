@@ -67,12 +67,30 @@ def create_chatbox(window, x, y, width, height):
     frame = tk.Frame(window, width=width, height=height, bg="#f0f0f0")
     frame.place(x=x, y=y)
 
+    header_label = tk.Label(frame, text="Select a user", font=(FONT, 12, "bold"), bg="#e1e1e1", anchor="center")
+    header_label.place(x=0, y=0, width=width, height=40)
+
     chat_display = tk.Text(frame, font=(FONT, 10), bg="#fafafa")
-    chat_display.place(x=20, y=20, width=width-40, height=height-80)
+    chat_display.place(x=20, y=45, width=width-40, height=height-100)
 
-    msg_input = create_input_box(frame, "Type a message...", 20, height-50, width-110, 35, 10, anch="nw")
+    chat_display.tag_configure("self_msg", justify='right', foreground="blue", lmargin1=50)
+    chat_display.tag_configure("self_time", justify='right', foreground="grey", font=(FONT, 8))
 
-    send_btn = tk.Button(frame, text="Send", font=(FONT, 10, "bold"), bg="#e1e1e1")
-    send_btn.place(x=width-80, y=height-50, width=60, height=35)
+    chat_display.tag_configure("other_msg", justify='left', foreground="black", rmargin=50)
+    chat_display.tag_configure("other_time", justify='left', foreground="grey", font=(FONT, 8))
 
-    return chat_display, msg_input, send_btn
+    input_x = 105
+    send_btn_width = 60
+    input_width = width - input_x - send_btn_width - 30
+    msg_input = create_input_box(frame, "Type a message...", input_x, height-50, input_width, 35, 10, anch="nw")
+
+    emoji_btn = tk.Button(frame, text="😊", font=(FONT, 12), bg="#e1e1e1", cursor="hand2")
+    emoji_btn.place(x=20, y=height - 50, width=35, height=35)
+
+    image_btn = tk.Button(frame, text="📷", font=(FONT, 12), bg="#e1e1e1", cursor="hand2")
+    image_btn.place(x=60, y=height - 50, width=35, height=35)
+
+    send_btn = tk.Button(frame, text="Send", font=(FONT, 10, "bold"), bg="#e1e1e1", cursor="hand2")
+    send_btn.place(x=width - 80, y=height - 50, width=60, height=35)
+
+    return chat_display, msg_input, send_btn, header_label, emoji_btn, image_btn

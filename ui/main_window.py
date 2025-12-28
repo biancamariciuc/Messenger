@@ -48,9 +48,12 @@ class Main_window(tk.Tk):
         self.client.request_users()
 
         submit_action = lambda event=None: send_message(self)
-        self.chat_display, self.msg_input, self.send_btn = create_chatbox(self, x=sidebar_w, y=0, width=chat_w, height=HEIGHT)
+        self.chat_display, self.msg_input, self.send_btn, self.chat_header, self.emoji_btn, self.upload_btn = create_chatbox(self, x=sidebar_w, y=0, width=chat_w, height=HEIGHT)
         self.msg_input.bind('<Return>', submit_action)
         self.send_btn.config(command=submit_action)
+
+        self.emoji_btn.config(command=lambda: print("emoji"))
+        self.upload_btn.config(command=lambda: print("image"))
 
 
 if __name__ == '__main__':

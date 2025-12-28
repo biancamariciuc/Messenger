@@ -64,5 +64,71 @@
         "receiver": "alex",
         "timestamp": "2025-12-28 12:18:19",
         "content": "bine, cio"
+    },
+    {
+        "sender": "bia",
+        "receiver": "andrei",
+        "timestamp": "2025-12-28 13:35:42",
+        "content": "e mai misto acum"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "bia",
+        "timestamp": "2025-12-28 13:36:03",
+        "content": "de ce nu m apare numele?"
+    },
+    {
+        "sender": "bia",
+        "receiver": "andrei",
+        "timestamp": "2025-12-28 13:36:06",
+        "content": "ciudat"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "bia",
+        "timestamp": "2025-12-28 13:42:02",
+        "content": "aici?"
+    },
+    {
+        "sender": "bia",
+        "receiver": "alex",
+        "timestamp": "2025-12-28 19:44:57",
+        "content": "hi"
+    },
+    {
+        "sender": "bia",
+        "receiver": "alex",
+        "timestamp": "2025-12-28 19:45:05",
+        "content": "ce zici?"
+    },
+    {
+        "sender": "bia",
+        "receiver": "alex",
+        "timestamp": "2025-12-28 19:45:12",
+        "content": "nu mai bine zic"
+    },
+    {
+        "sender": "alex",
+        "receiver": "bia",
+        "timestamp": "2025-12-28 19:45:23",
+        "content": "vorbesti singura"
+    },
+    {
+        "sender": "bia",
+        "receiver": "ari",
+        "timestamp": "2025-12-28 20:01:11",
+        "content": "ok"
+    },
+    {
+        "sender": "bia",
+        "receiver": "andrei",
+        "timestamp": "2025-12-28 20:01:22",
+        "content": "ok"
+    },
+    {
+        "sender": "bia",
+        "receiver": "alex",
+        "timestamp": "2025-12-28 20:01:28",
+        "content": "ok"
     }
 ]
