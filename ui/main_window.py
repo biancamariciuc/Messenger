@@ -19,6 +19,7 @@ class Main_window(tk.Tk):
         self.client = Client(SERVER_HOST, SERVER_PORT)
         self.client.on_receive_user_list = lambda data: handle_server_user_list(self, data)
         self.client.on_receive_message = lambda sender, content: handle_incoming_message(self, sender, content)
+        self.client.on_receive_history = lambda data: handle_history_to_ui(self, data)
         self.selected_user = None
         self.show_login_page()
 

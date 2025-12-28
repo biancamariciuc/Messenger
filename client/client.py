@@ -12,6 +12,7 @@ class Client:
         self.username = None
         self.on_receive_user_list = None
         self.on_receive_message = None
+        self.on_receive_history = None
 
     def connect(self, username):
         try:
@@ -33,6 +34,12 @@ class Client:
     def request_users(self):
         if self.client_socket:
             self.client_socket.send("GET_USERS".encode(FORMAT))
+
+    def request_chat_history(self, target_username):
+        if self.client_socket:
+            format = {"target": target_username}
+            msg = f"GET_HISTORY:{json.dumps(format)}"
+            self.client_socket.send(msg.encode(FORMAT))
 
     def send_chat_message(self, receiver_username, message):
         if self.client_socket:
@@ -62,6 +69,13 @@ class Client:
 
                     if self.on_receive_message:
                         self.on_receive_message(sender, content)
+
+                elif message.startswith("HISTORY:"):
+                    json_str = message.replace("HISTORY:", "")
+                    data = json.loads(json_str)
+
+                    if self.on_receive_history:
+                        self.on_receive_history(data)
 
             except Exception as e:
                 print_log("Error", "Connection lost")

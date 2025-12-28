@@ -4,8 +4,8 @@ import uuid
 import json
 from common.config import SERVER_HOST, SERVER_PORT, FORMAT, print_log
 from login_handler import handle_login
-from helper_functions.users import get_users
-from helper_functions.users import search_socket_user
+from helper_functions.users import get_users, search_socket_user
+from helper_functions.messages import *
 
 
 class Server:
@@ -70,6 +70,8 @@ class Server:
                         receiver_user = data["receiver"]
                         message_content = data["content"]
 
+                        log_message(username, receiver_user, message_content)
+
                         receiver_socket = search_socket_user(receiver_user, self.clients)
 
                         if receiver_socket:
@@ -80,6 +82,15 @@ class Server:
                             receiver_socket.send(f"RECEIVE_MSG:{json.dumps(format)}".encode(FORMAT))
                         else:
                             print_log("Server", "User (receiver) not found!")
+                    elif msg.startswith("GET_HISTORY:"):
+                        json_data = msg.replace("GET_HISTORY:", "")
+                        data = json.loads(json_data)
+                        target_user = data["target"]
+
+                        history = get_chat_history(username, target_user)
+
+                        history_json = json.dumps(history)
+                        client_socket.send(f"HISTORY:{history_json}".encode(FORMAT))
                     else :
                         print_log("Server", "Unknown command!")
 

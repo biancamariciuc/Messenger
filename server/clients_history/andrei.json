@@ -1,1 +1,38 @@
-[]
+[
+    {
+        "sender": "bia",
+        "receiver": "andrei",
+        "timestamp": "2025-12-16 08:16:27",
+        "content": "salut!"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "bia",
+        "timestamp": "2025-12-16 08:16:34",
+        "content": "ce mai faci?"
+    },
+    {
+        "sender": "bia",
+        "receiver": "andrei",
+        "timestamp": "2025-12-16 08:16:39",
+        "content": "bine, tu?"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "bia",
+        "timestamp": "2025-12-16 08:16:44",
+        "content": "ok, bine si eu"
+    },
+    {
+        "sender": "bia",
+        "receiver": "andrei",
+        "timestamp": "2025-12-16 08:32:28",
+        "content": "pot sa scriu acum"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "ari",
+        "timestamp": "2025-12-16 08:32:33",
+        "content": "dada, e ok"
+    }
+]
