@@ -1,0 +1,26 @@
+[
+    {
+        "sender": "bia",
+        "receiver": "andrei",
+        "timestamp": "2025-12-30 19:03:29",
+        "content": "{\"iv\": \"85891eaafde28c3355899dc3ce3c7c87\", \"ciphertext\": \"a38d00401036f7ddc9697cbe5a452c64\", \"key\": \"5b6845de40dbe01874941c7f830d139427d3e2aec752a75c7c997c34a41ec5a9dcd839f5224438ed5375b204af5ecf3bd7d5c2a1502724ba0bc5b32031f98d73f0201307709c38146433108f3ce2954f89cfaf9c2bc1f8ec374d4990e1e05191005447d864fd04fa90276634b3259319f1ae39dc67405d38bd76538cbc750317\"}"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "bia",
+        "timestamp": "2025-12-30 19:03:34",
+        "content": "{\"iv\": \"64fbf43470c8baf595983dd103a58765\", \"ciphertext\": \"8aa557e57505d9c747a8f3be17b8b3a1\", \"key\": \"483cb78fcd668416f703b3423d89d6825ffece020f0b0e04318287814bc6d00acc65ff5ababc55ba6eb450a62aa26fde367e2570ee451b127d32dcbac36ffd97fd52360e94476e0bfb30146706ccdf4e0fc992a938f42a08cacf3f93276bd32758c7d1f696e14ac8ccb319eb381b2d17cd381d214dbda230a739620b88625dd8\"}"
+    },
+    {
+        "sender": "bia",
+        "receiver": "andrei",
+        "timestamp": "2025-12-30 19:03:36",
+        "content": "{\"iv\": \"3f0fc14ad491af9b89faa0acfaff6e96\", \"ciphertext\": \"315c5be02ee50e7e49c6b37f38d398c8\", \"key\": \"13bbe172702981e590a04f681bd6db4e925ff75fcd0279f7402cb64bba954d93ef3bbce564a17210959943877ddbe9fe5ccbbcc456e2ee66c9e8d9dce3ef9e9033d1a14a75a22b8568a22d8f072476824c0c258fbae12bf13da7c5bd4d567cc164f06a7ff885719bf7d508513ea82c883cb835be811091b3fb3a4e68ef040779\"}"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 19:03:47",
+        "content": "{\"iv\": \"0ef3c1c098c08a738612b25b578f27a8\", \"ciphertext\": \"e6d27f262641bf4cfe1abf4cef2012a0\", \"key\": \"24ef6d4381843764b98d0fa198f1fc7dbebc85137f7624e75174d2fab72e22b61ab642c4bdd2e282d25825dbf3e6b33eec2172e8ae1a138da69b6d5a86570d40635e6e2cb4f53295b83369f65cb69eba55cbe992d3b5753d461e97e1dd6532528c195bb8a5b143226bcafd014d5cdc7603180cf5874834d4d95a07c6aa00d36b\"}"
+    }
+]

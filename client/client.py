@@ -3,6 +3,7 @@ import threading
 from common.config import FORMAT, print_log
 from client.helper_functions.crypto import *
 import json
+import time
 
 
 class Client:
@@ -35,14 +36,7 @@ class Client:
             self.username = username
             self.client_socket.send(username.encode(FORMAT))
 
-            # try:
-            #     confirmation = self.client_socket.recv(1024).decode(FORMAT)
-            #     if confirmation != "LOGIN_OK":
-            #         print_log("Client Error", "Server login handshake failed.")
-            #         return False
-            # except Exception as e:
-            #     print_log("Client Error", f"Handshake error: {e}")
-            #     return False
+            time.sleep(0.1)
 
             pem_key = self.public_key.save_pkcs1().decode(FORMAT)
             msg = f"PUB_KEY:{pem_key}"
@@ -89,7 +83,7 @@ class Client:
     def listen_for_messages(self):
         while True:
             try:
-                message = self.client_socket.recv(4096).decode(FORMAT)
+                message = self.client_socket.recv(16384).decode(FORMAT)
 
                 if message.startswith("LIST_USERS:"):
                     json_str = message.replace("LIST_USERS:", "")

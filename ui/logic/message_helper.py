@@ -63,7 +63,7 @@ def on_select_user(window, event):
         data = event.widget.get(index)
 
         window.selected_user = data.strip()
-        window.chat_header.config(text=f"{window.selected_user}")
+        window.chat_header.config(text=f"Chatting with {window.selected_user}")
 
         window.chat_display.config(state=tk.NORMAL)
         window.chat_display.delete(1.0, tk.END)
@@ -71,3 +71,5 @@ def on_select_user(window, event):
         window.chat_display.see(tk.END)
 
         window.client.request_chat_history(window.selected_user)
+        if window.selected_user not in window.client.users_keys:
+            window.client.request_public_key(window.selected_user)

@@ -1,9 +1,14 @@
 import rsa
 import os
-from common.config import *
+import json
+from common.config import FORMAT
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+from Crypto.Random import get_random_bytes
+
 
 def generate_keys():
-    public_key, private_key = rsa.newkeys(2048)
+    public_key, private_key = rsa.newkeys(1024)
     return public_key, private_key
 
 
@@ -27,10 +32,48 @@ def load_keys(username):
     except:
         return None, None
 
-def encrypt_msg(message, target_public_key):
-    crypto = rsa.encrypt(message.encode(FORMAT), target_public_key)
-    return crypto.hex()
+# !!!! cod generat cu AI !!!!!
 
-def decrypt_msg(hex_message, my_private_key):
-    crypto = bytes.fromhex(hex_message)
-    return rsa.decrypt(crypto, my_private_key).decode(FORMAT)
+def encrypt_msg(message, target_public_key):
+    try:
+        aes_key = get_random_bytes(32)
+
+        cipher_aes = AES.new(aes_key, AES.MODE_CBC)
+        iv = cipher_aes.iv
+
+        encrypted_bytes = cipher_aes.encrypt(pad(message.encode(FORMAT), AES.block_size))
+
+        encrypted_aes_key = rsa.encrypt(aes_key, target_public_key)
+
+        package = {
+            "iv": iv.hex(),
+            "ciphertext": encrypted_bytes.hex(),
+            "key": encrypted_aes_key.hex()
+        }
+
+        return json.dumps(package)
+
+    except Exception as e:
+        print(f"Encryption Error: {e}")
+        return ""
+
+
+def decrypt_msg(package_str, my_private_key):
+    try:
+        package = json.loads(package_str)
+
+        iv = bytes.fromhex(package["iv"])
+        ciphertext = bytes.fromhex(package["ciphertext"])
+        encrypted_aes_key = bytes.fromhex(package["key"])
+
+        aes_key = rsa.decrypt(encrypted_aes_key, my_private_key)
+
+        cipher_aes = AES.new(aes_key, AES.MODE_CBC, iv)
+
+        decrypted_text = unpad(cipher_aes.decrypt(ciphertext), AES.block_size).decode(FORMAT)
+
+        return decrypted_text
+
+    except Exception as e:
+        print(f"Decryption Error: {e}")
+        return "[Error: Message corrupted or wrong key]"

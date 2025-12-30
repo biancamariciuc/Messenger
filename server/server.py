@@ -1,11 +1,11 @@
 import socket
 import threading
 import uuid
-import json
 from common.config import SERVER_HOST, SERVER_PORT, FORMAT, print_log
 from login_handler import handle_login
 from helper_functions.users import get_users, search_socket_user
 from helper_functions.messages import *
+from helper_functions.cryptoo import *
 
 
 class Server:
@@ -16,6 +16,8 @@ class Server:
         self.clients = {}
         self.running = False
         self.public_keys = {}
+        if not os.path.exists("server_keys"):
+            os.makedirs("server_keys")
 
     def start(self):
         try:
@@ -50,7 +52,6 @@ class Server:
 
             self.clients[client_socket] = username
 
-            # client_socket.send("LOGIN_OK".encode(FORMAT))
 
             print_log("Connection", f"New connection from {address} assigned ID: {client_id} and the username: {username}")
             connected = True
@@ -99,10 +100,15 @@ class Server:
                     elif msg.startswith("PUB_KEY:"):
                         key = msg.replace("PUB_KEY:", "")
                         self.public_keys[username] = key
+                        save_user_pub_key(username, key)
                     elif msg.startswith("GET_KEY:"):
                         target = msg.replace("GET_KEY:", "")
                         if target in self.public_keys:
-                            resp = {"user": target, "key": self.public_keys[target]}
+                            key_to_send = self.public_keys[target]
+                        else:
+                            key_to_send = get_user_pub_key_from_disk(target)
+                        if key_to_send:
+                            resp = {"user": target, "key": key_to_send}
                             client_socket.send(f"KEY_RESPONSE:{json.dumps(resp)}".encode(FORMAT))
                     else :
                         print_log("Server", "Unknown command!")
