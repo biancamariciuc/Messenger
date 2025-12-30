@@ -1,38 +1,110 @@
 [
     {
+        "sender": "ari",
+        "receiver": "bia",
+        "timestamp": "2025-12-30 11:39:18",
+        "content": "{\"iv\": \"b53c400bb5538fa09667039a5e7b4193\", \"ciphertext\": \"3860253595a5274cf954d8bb355219b1\", \"key\": \"4478ee94423e03b974a5a704a5c832ee5c4edf94b36a3016301d2f51925348541ef58e361c40fbe33381c520b6b0f0410b8f44a2967e531fbe28e17119e60449402a8ac487d907c948c506eed8acea9e2cc8ab92437d56ff31ac4ede50ee6a9b289764c5776d5a5a35d73fd91fc776d1f1c56634254ece1d60e9056ab9d47408\"}"
+    },
+    {
         "sender": "bia",
         "receiver": "ari",
-        "timestamp": "2025-12-30 10:19:44",
-        "content": "7bf9dccaef170c9f9bc80f743d0ae00c96c570f8c1c52990510b878de925be7373c67bec5afea89110162221e0a13f0941d8755d492e943116cf960f7be513a90a163b31a48deed18202aa93789bb3ff54a642653a2c1f2a8b2c1ded1b73455803b29a240cd5c17819b55b3017c2cad2a5be81f9ab3cdc8b555efe413940b99c"
+        "timestamp": "2025-12-30 11:39:28",
+        "content": "{\"iv\": \"111b42d75dd78d7815c3abe28b0d4964\", \"ciphertext\": \"57e7b464fa7a2d01ad85d820deed0e0c\", \"key\": \"9a8ae9a8d4e6178e9ca2b304d34f25d708ec01f860e4c6a3a70d9f4d83c4c1df80dd8ea825d452334c7aa9929d89cb2a987f677c0695b975585eeb10c71f38ad7758912a7f7c23a141d6ec966b5ddcffbc426eb1f4268656e0c0daf9e3b51f3245b96f844f666aa7a519da1f14883dadf828b6353f31a301c1cdafd7b418a15e\"}"
     },
     {
         "sender": "ari",
         "receiver": "bia",
-        "timestamp": "2025-12-30 10:19:48",
-        "content": "10dd6dcf8767a81c916fc69b4609853451246784885bd9a5ace794308ff113cd37a0aacecea251d1ad58584a7e76d30ce70cc369a691c103f23255fe2ff544018b0ceb47d16e83b7f800d1804b19d5ad05b8e7302aaf395da686cddb959db2f8b98fb3cfe4065b87bd987db2a898a04b3968650e91b242e8c7eb6451fdf239c5"
+        "timestamp": "2025-12-30 11:39:45",
+        "content": "{\"iv\": \"24f3a15c05d1080bfbca545bae18756b\", \"ciphertext\": \"e2c0ef9c8a96ed0830d0e85a8ff95eea\", \"key\": \"43557e07aae31ac9e2b37cf90bdf69012753b9c3e78812b69e67b7ca36f69a515988f251c5332c9fda09c96f817b2cbba24846263cb11bef5f91528342d99a5d349b8771e3a34b779fdb5fd738df725e3e6b178598c97de67cbb41a2b4d0218486abebf2a3effa8b14c7dece109aca8515eba5569975f266b4523d0dfbd59889\"}"
     },
     {
         "sender": "bia",
         "receiver": "ari",
-        "timestamp": "2025-12-30 10:19:52",
-        "content": "3e1daff91e788fa6a7b4ab889eaebc553d138fa793f6d34ecc02de5188bdd08cde83d321f91dc5996af92b40dce314b34be0f885121bff1576384d95f1a543389b88b57d627b8472c01439b20b07e359d94df66b787e03057b8e8a5e2ddce508679c3c210334d6423c78ee5865f38cf38960d8ff8ef19acb8427d62290a88b17"
+        "timestamp": "2025-12-30 11:39:50",
+        "content": "{\"iv\": \"984fc3a928cf7d6e038c703bf474135a\", \"ciphertext\": \"eb9feed913204fe075aef83cabbc44b4\", \"key\": \"2acba4f44ee7b49f433fec0611997740fa43da5b0dfa1439fd47b34c9701b525a84b3243f3c9535d637e5ddc80bd76c1b8e49eb0258c3977386c0930373a3b9e18044c86a8732e09fc1c5e2030fb811274eab4ad5f1540aade9d601406fa8eccb075bcc3a5b897c4d7e453c4881acb1d06b34582881c9d905980a45693bce052\"}"
+    },
+    {
+        "sender": "alex",
+        "receiver": "bia",
+        "timestamp": "2025-12-30 11:40:38",
+        "content": "{\"iv\": \"1707dc7a16fda73dd36bde8f8c30f358\", \"ciphertext\": \"05e15b90496c52f6add97cbef6c25eb5\", \"key\": \"3a563c790f209e7f02c7cd68e25eb6a2d27c68ff70073aba41a99bbdc121aca44ce08cd96b59a7280f025c4287a61b71530c2b8716af242a4bb64ff67e44a3c81f5eb9dd3635b04a3a6a2928e0d74d867ae61766e287e9d7027510a08e32e77ec65d0a8fcb70ddca2a93ce425ab9c5f41d59f2698ccc7e06713b8b2877a2a784\"}"
+    },
+    {
+        "sender": "alex",
+        "receiver": "bia",
+        "timestamp": "2025-12-30 11:40:48",
+        "content": "{\"iv\": \"106e5b8cf6e5afb24edd78c72a84defe\", \"ciphertext\": \"2f80e9cd26bf68ad3e4be223cc20556e\", \"key\": \"7c1760fd7f35c55aca28d932c8913e49c6bef3f2979a803c4b8438d6e736f54699b18f82b208dcc2a1bc8705da666503a4162a9410a153d792ff843778c961951046b1845ef71b3c9f113636395060cf06f9201bdf33d7ff362b0de5556fe3088ec0a96ba705edaaa415f20bef0fcce1fc31ccd4e615b8bafda931ecf38eba32\"}"
+    },
+    {
+        "sender": "alex",
+        "receiver": "bia",
+        "timestamp": "2025-12-30 11:40:50",
+        "content": "{\"iv\": \"7ba3cfab715708320e3ff80be75946b7\", \"ciphertext\": \"dfc86a7de66cbbf77782548331025fe2\", \"key\": \"0ecfe5557316292d4eeb22934410d8648d82c3cff497ab4f7f1e0a7beebc7ae2f46738159660e7c800fefc3080eed7ece4ab26447d37efa7feaf98000f97853cee37b220756b01803976f9cbdd5c94acfb079974329a78eab156650b98ec5adbe877a948903fdab7f094e59cc8b5a86a1547682ed5814ecfa28eb5c905d74427\"}"
+    },
+    {
+        "sender": "alex",
+        "receiver": "bia",
+        "timestamp": "2025-12-30 11:46:09",
+        "content": "{\"iv\": \"9d9377c9212fc027ecfe3b9ea9b4f784\", \"ciphertext\": \"7ce2a85f9347b18d70ba5e4f294946bd\", \"key\": \"84625eec272084010bcd6ef28d5a80d3b86b3f5df60f811c933994e4fed66a0eac2c3d6854d779be937a6327c265cb154fc26a764fd247e29648bef8292d3e29c4784907f4627ce02b6be2a37e9a0b2b99681bf2e51821af331c3cca9e9abe87849438d911b4c37721c4f729edd95fe3dae195772c456999e0f550891bf49aa3\"}"
+    },
+    {
+        "sender": "bia",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:46:12",
+        "content": "{\"iv\": \"d6742517813f2ef00d662e8c312feee5\", \"ciphertext\": \"794579b74bea951d88216a4058f72c3f\", \"key\": \"9f9a08a23d1e6ffe6afaf4262d9d689735333a2bf501539853034a7e7b44dec2db71c31fb2c4ef3087f3f906be04611f8728195a02257b2fab01fb8b15912afab4b1e823549ecf396b167b793b0f14955d3dac34372c246c77cb0af7bf78b562bfecb9ae3faa707f5a9e7182a5ec1b032acc96e20044dc6d52bc95dd36646630\"}"
+    },
+    {
+        "sender": "bia",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:46:19",
+        "content": "{\"iv\": \"e908439e02043f3f87bab34d290ab8d2\", \"ciphertext\": \"d95bf326d1cfcdb5a41ddf5d6839ce7e\", \"key\": \"6748b5b8f993931dbe75eb9f9a042e2b29e7bd565d5c0e534a093a6d01840439ae2171b33b51dc8a7e6177404dec3dc82ac8e9f889e0fc14f0c60f476019c95681eafab908adaa678d73ef6426af5673655705d9409de84804fa0fca4d4bb8eb080a611b9e61bc6878424f673b455f38ba303a13621a7fce3098cb86b991cc08\"}"
+    },
+    {
+        "sender": "bia",
+        "receiver": "ari",
+        "timestamp": "2025-12-30 11:49:57",
+        "content": "{\"iv\": \"22cfc038796ab78a38a32d7f5c3cbcda\", \"ciphertext\": \"0b3508c44922cae445997fcceac9c554\", \"key\": \"66a862286daf49d9020ee9caa18e8e591d376e03df48d7949e102baf90ed0a8bf7bc40d40573a661b07315b529bb2df4913f725ae61be32f9c54bf795abbb82c709066f9efa1c49bda83784aa1f3ffed333800476b68e7ff4d433ff75c1947c95190046eb50e43faa527dcc0a34d1fc8201d963426bac8a3b52a3cd73b75f2f7\"}"
     },
     {
         "sender": "ari",
         "receiver": "bia",
-        "timestamp": "2025-12-30 10:19:59",
-        "content": "3c5bef2945232159a3f912a009c120181a3fee263a491c42a8bb7090dae2e7c58492e0bc3f21d1d57c4163c75315bad9c697bc930a4f715402ffb2759cf256b5340fd166ef475af29e9f1305679c6b14de544490a8a16d0c3311fb35a2ddfddbaedd6f1fded7a12c3c335d7fe994fb4a2665c4566467ed7a3252971e715a472a"
+        "timestamp": "2025-12-30 11:50:00",
+        "content": "{\"iv\": \"5e7a8ff99f1608325d9a59e1dfbb4c6b\", \"ciphertext\": \"2b08779635a383f474b3c80b7965a9c7\", \"key\": \"06e3aa100776e2a816f6e3b2b2b701bdd8f69e4e419d693978c3780601dbec5fc1c58bcd5b8da4d59e5f353be66fc1bd7dc40192259c6efb44d33096ff0b7829f845919d74a7e0daf86008868a212967ed781fe3ff72f1d1116fa1c9767608f5a19bed38815fc805b5ecd2b143d84942046aa26737bd8202e7b6dbeb0a3406c1\"}"
     },
     {
         "sender": "bia",
-        "receiver": "ari",
-        "timestamp": "2025-12-30 10:20:03",
-        "content": "12b1de11d2c2397b79cbef9a1ac0f8b80d976c29bc1cc680fa8f9ec29d988153219396189302d9528df1765a78ca32d67c6d153591806b6a23894df078c81a82749b5afc138162248783bb7884d4b0fa735e541a3465266ecea6d7c14fff741b4ae486616cefea90374f3930dda627e8227e3aad2686f311b410564a73503669"
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:50:15",
+        "content": "{\"iv\": \"5a4146e59b9ec12ef58f470f556fd01d\", \"ciphertext\": \"3488a1c63373f43492d014a82009f413bc6413062e14b7bd6ca6569cac0b5891\", \"key\": \"184c642304176dfb6c923f851a02983a1a0922ca35bab41ccff5c9b0407573c0fb52304e84da4e4e8f1dd88666bb74ed4dfe4a442337fda3ad0182146d2b20304b755498e9389a5b642f61d7c18972059144d5cb1066523b3fe9baa8b5ccbf73d92ffb23f28aa3b640cb928a0c2ca68a767c40d844f2b041be0d348a0e2e4f21\"}"
     },
     {
         "sender": "bia",
-        "receiver": "ari",
-        "timestamp": "2025-12-30 10:20:11",
-        "content": "7ca8dd94de9144a9b179b78837793be64a351640187f1f93b333af50a0aeb90aa6588625488553e67081b4ef52c9a0ff0a04a778d15fbdc5e394b1587e80b4d066eadb825e2cff519f9f1089e7ef691b55cebe7a31d861321a0ad8609cac5514d3ea94277418391272a5acd9aaf2653a7ecf7ff722c83ed791586cf6517600f9"
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:50:18",
+        "content": "{\"iv\": \"af39807d9f387a0889be65f3eac339a1\", \"ciphertext\": \"74e86dd633e46371ffc820ca83f09a3f\", \"key\": \"6acb6c06289d35c09f9a507709f899bcf4735d4af28504a9967dd1969e3ce349d4e1c869f60d16b24e8be6025f50b22f6d0967803a5ce64e5f127c10b8dabf1f15ef5890da4b2bca05a69d25a37cf98ee6314c7d2c1a371d348a64c5b63792ab34c4af035def757b1426caf455f1fd82c93015fb7e2a01eec759ff2001c809c7\"}"
+    },
+    {
+        "sender": "bia",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:50:20",
+        "content": "{\"iv\": \"74f7dfe29fab50560cca7e88e8835ddd\", \"ciphertext\": \"efa7c4899299d7125102706218c881fc\", \"key\": \"8d0bd9c1a6a9d997a4a99771a0c1a5876b99eab4e909d507f1a5265012f450552abc407b41d00c51e85cb5c813cc894d93d7802c4c5047a35c4a3d8538a5c70e064018233d198801d848f0ad649cc845f057ed81b568519c141c080f302495706ce6bbe6b9a31ce1dc82c2537f3d4f1be14567845268cba7fd636eec2c90734a\"}"
+    },
+    {
+        "sender": "bia",
+        "receiver": "andrei",
+        "timestamp": "2025-12-30 19:03:29",
+        "content": "{\"iv\": \"f3b4fb9ea6554e5b5bbf43d9bc38bcc4\", \"ciphertext\": \"9e858d1c3c4d896dd5caf77729f5aa53\", \"key\": \"3b5478ad8c318153245f12f0cb742bd361e43486b695c14e30fc26ffafe37d0cc4033b81386bfa6cb494c4330f2c59548f11a0e20710ccadd7471538faefaff034c3e0731108be717ebc4de14586ed095b31fd1a7675ac61cb052f9f63d1a77625b80ec93239207d999583b773e74eb2ee638a771dd2041f6157d0cdc6d3ebb4\"}"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "bia",
+        "timestamp": "2025-12-30 19:03:34",
+        "content": "{\"iv\": \"901c65dcd346b751357d214c0c87256c\", \"ciphertext\": \"8ce65fef6d35f111a1628b9ca7562afa\", \"key\": \"54982bbf4f43b21b77d744ab20b00d96ef562e33938986a1a93fc43ae7e04b295eac75240ad7c9e2b215daa5d7b44cefba3864cebb4dc9aebe1f17a1269600ab56eb808bdfe85d8095b8a71fa246fd04ad22a368fcff21a9f013804fa6d70819f06993dfb791290fbaf2d0ce71077d1e86e481283061b26122ada7e62234e31f\"}"
+    },
+    {
+        "sender": "bia",
+        "receiver": "andrei",
+        "timestamp": "2025-12-30 19:03:36",
+        "content": "{\"iv\": \"2b8c7c750c3a7d2f4265280c17038f22\", \"ciphertext\": \"3d49b7a79139840f3bc6eaf8fffdd0fb\", \"key\": \"8f3eb772ce00dab01e472011b0229242dbe7f81f2da91aba1ef9669f9c39b2bf15c255ef1a9e9225ab5029a5b97a54bd3e6ae7013bdf4bace9f301c09ab480d65dd18ceaa803db42b95c17eb5066d7cda79fc367ef2e123e1f23246d1a53dd5bd33a58dce8d4a6911cd226f7f626b20a730966c9372e070263e6b900b3cb26cc\"}"
     }
 ]

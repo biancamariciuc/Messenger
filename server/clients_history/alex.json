@@ -1,1 +1,98 @@
-[]
+[
+    {
+        "sender": "ari",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:40:19",
+        "content": "{\"iv\": \"28e79d82b9417e48ff7c32ee002c1cdc\", \"ciphertext\": \"e7e99dce0f3e9cf3ad2cb09607b0df04\", \"key\": \"0fbee7f3f47b3cb4e6b831439c97489d02dbfe0514d47802297049a3df869a234ed772829b2262f269ea21baa115b63b6818468b2eb543fa4d95d8a0a5da52f439c9e942f7a1a3feb6f32dadc7471fde208ff5e2640fba1b5660b66ab8afe20919532c5cf38e85a3a750f8ed69ab5a68af6a2d4b352905d3016887d953296349\"}"
+    },
+    {
+        "sender": "alex",
+        "receiver": "ari",
+        "timestamp": "2025-12-30 11:40:25",
+        "content": "{\"iv\": \"92508f0c26333f0426746d711fd21344\", \"ciphertext\": \"fee3103e40f765aeb5b8fc73d9f2e034\", \"key\": \"6665b997105b56c87373d2bdcb5dc5a58dc80393dca41f2a5d9655cb17586f7cdb1c8f0e37d5338fddcfc67b3287ffefad10cc54f875715de94f8bd5aac4d9103b18786a9960cc00c432bc6bd08170a49508547cf201d5a62c30e00bb4eb622d159f9dd88fbb39612df3cfbd5980a5b446a9913f7fa85ae694c5d848b67e7bb7\"}"
+    },
+    {
+        "sender": "alex",
+        "receiver": "bia",
+        "timestamp": "2025-12-30 11:40:38",
+        "content": "{\"iv\": \"5ebcba725b47d7fa180f9ce2c6d28fab\", \"ciphertext\": \"57331825270f26492e7d8b9fdee764e7\", \"key\": \"880e75fb39e8a273b96e3123631f4a9e8e7171ea42720962180af3d59b121ad71a05de279e585010b919a243e670fd7dc6a29914e7052b12821e9b28b302b3c4ca0b1b72581f1947e02b33e721f9bbb2955cf5b5b3e7188af23d43ce9b8b224c15a21f230d5dac3bf477171c38b13fdca823686b51233cab8611592deab77f88\"}"
+    },
+    {
+        "sender": "alex",
+        "receiver": "bia",
+        "timestamp": "2025-12-30 11:40:48",
+        "content": "{\"iv\": \"2a42b4104aca1611450d6133203f02a2\", \"ciphertext\": \"ceadda4c0187cf114695f210187f352b\", \"key\": \"32188bd0af58caed31ee4a69d00c0e921d8bca2fa980f4e2097b001e0b4209ff7392152870281119d8bdacfd9305b3a77c15ee7c0798664302344cada9042d2d9192fcb261e972259fd24fd97d60ff13c5173c4fc0e9d8bfb6d89e4a6e6e7321aafef55c9cc873f1e52499bc6890d0699ebb8a63ea59847d6c8e89a9bb8bf9ee\"}"
+    },
+    {
+        "sender": "alex",
+        "receiver": "bia",
+        "timestamp": "2025-12-30 11:40:50",
+        "content": "{\"iv\": \"c70ae5c6702c7083d48b5e3f100394be\", \"ciphertext\": \"c5aaac3da6573235df1e8262fa0c22ff\", \"key\": \"750d56fcb2d514f175ec9fdf379b18b5ea56553e78746d536e3d1f76444db080953364ff754979488c533e675d5b59a49054da6922a3a3c2ddd3b3f33ccb1e044b497a5d00127457eb80a74dda304c2116646a4827c2d1778f2e86055d0e31745a949aaf09a97a479ac160a70a498837febdf0c6fee27c32c5dcfb8e73b504de\"}"
+    },
+    {
+        "sender": "alex",
+        "receiver": "bia",
+        "timestamp": "2025-12-30 11:46:09",
+        "content": "{\"iv\": \"a3989a9122f922a08a3bbca2fea22ec1\", \"ciphertext\": \"5510b24470d672fb64144c715ef4f4fc\", \"key\": \"1ba7233222b517a518044fc3447599832460ac5bb2b6f13326491f6cf8ece37b651420206bd3bc85b9b2075a1ec0202eafd01f0f52022ba7378591f79f70853871984770e6cb955c867b41a502de35e8bac20a4fd70b83dcd2d0fd7db99ac82dd994f0dab1e7d355b3e4fe213404a31d63bf7c319391b7d98b9e973b9c12606b\"}"
+    },
+    {
+        "sender": "bia",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:46:12",
+        "content": "{\"iv\": \"017dde0c1d66b10f7138ee936dee29b9\", \"ciphertext\": \"eaa1da57bf3e40d701ccc612129bd443\", \"key\": \"154965a4f83fe117e40e581894d29f908034ccc864fcfa1d5a039d7cc9720fdee22a8f9f875ff5c5a38e1686d11f7897a49f7fc2d50df516b86c4516aa95cfbc04905a0292beb7abb7dad90ae31e82a1fbde56f7b35784bd79e5cbb4c85c41fb5dc8cc35f72bb120070f76552d0fa28c30641a5a225f2a8e7941a3ce97ca81cf\"}"
+    },
+    {
+        "sender": "bia",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:46:19",
+        "content": "{\"iv\": \"be9ff6417ca1abb6d567395bd0dd5081\", \"ciphertext\": \"6e62cbd6e793c268a4bef1a3f5359875\", \"key\": \"703105338299ec412934b05eeed35542fc3ba898506f0ef20c6a8432b60590d353f2f693366d04c68a4e527d5bae0647122157aaa059730063272b74adbd6638145af30e38dee0aab4b65338c0641df77abbb1c4f93f3f0cf54a5fa61cf25c25861816a7a9e0331ec2b8785d7e92daff3289b190e79b4a59b1f79662fee0863f\"}"
+    },
+    {
+        "sender": "ari",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:50:05",
+        "content": "{\"iv\": \"839e1ca298b62a0120daba80193d6db4\", \"ciphertext\": \"c5b4a32376192c4f914bfc98bcf1251b\", \"key\": \"512e33b2ef67ddbbaa9414300437a831bc793bfe2daae91223c77d16737f0123edd41a67d43e8e40758dc146538a010948259a6856df99878b64e8c12bbebfeef5da700105747bbdfb1e509453d4fa49f75c2f8d98ad129e67ff4e6b7e516cfa34bb2a52ef33b84ff91ee97a8c0c18176149a56ce39d95d74f6bc1982b1583c1\"}"
+    },
+    {
+        "sender": "ari",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:50:06",
+        "content": "{\"iv\": \"78414fe805632b5f596e80a1432996b2\", \"ciphertext\": \"d708660dfe194351af44241e1fb7577b\", \"key\": \"6874798eeaaa5a61a3c40386f4e6198da6a8ecf60fd04c5f2afd202eef482aada00ea885bbd1b065149f6a5f3422cb308b50bd3f4b04091df6687240332b8658081b1cbde979f88a8758e3fcf42e9b8f8b215dbab5696fcae6f10dae03eaf00ad1881ceef585b8189cedd11444387d133595b763432a422818eae1d149ceb81d\"}"
+    },
+    {
+        "sender": "ari",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:50:08",
+        "content": "{\"iv\": \"b4adc556b938c70f6df96b817103cfa1\", \"ciphertext\": \"662be698dca4696c80f4d4b3b86515a6\", \"key\": \"3f2f975d4a53e19a6c3ae0baed7cd4b8c3a7255928095b4ec070d8c922074ce968ca9036e35c4ca23cbb29cf57b7aa0abe188f51d24d5e680d04941646abf4303e65b49787b3e3fc18e8434dbacd5b76b4695855b8fc52608a7261c10a3b9c0a0caa8cb0e759d252813481163c4328312db9848ae28ac8d818a5f80d5dcb9bb0\"}"
+    },
+    {
+        "sender": "ari",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:50:09",
+        "content": "{\"iv\": \"2ae6f2b16acb3ec302712f571dc7356a\", \"ciphertext\": \"615e1122efdea3149103c57468151f41\", \"key\": \"32499983229feebe70c15103dbd0c6d02d0327716ffee51dc8c5b399b01a52b3b8da4dee6c6b851cff0c5e500054bd4b74493c3d0953df237937828b0f318aa879d6a2aadd1a86b3203dc5d0cbe75360881584e9da2bfe9d71bcc062182c1675a03e21f35eec38c0ea27cd6a065d5cf167683aca1bb1d49c9fdf52dec790ac99\"}"
+    },
+    {
+        "sender": "bia",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:50:15",
+        "content": "{\"iv\": \"05dd334f932353150a431eb2d011c5d3\", \"ciphertext\": \"875745c701e4381025e45c6f2cb7b219e9827382b2d0b5d92ed81e950e19e30d\", \"key\": \"31c65e31ed123cf98b9cb1a7b8a7654bf0321ab2a529bd90d0ff6bcb08a215f9947cdbfa206e56cb2570414599100fbdbb6a329400d451da8343fa95babc91bc1d67c67e764e9cbd362e2dd01a0330886a86b8ea303791658c4a22cca8b26e53fa5b77fa42c688a145b361e425d07a4e3596cf67433202a53f88db819cf09e52\"}"
+    },
+    {
+        "sender": "bia",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:50:18",
+        "content": "{\"iv\": \"4406203c390d6538ea8c7e5825deb9e0\", \"ciphertext\": \"a0ea0dda63375255148e99191cbb5acf\", \"key\": \"3365217f22995a96eeb3a558b956959d03ecfd7a17744ae082bc611927b38929db774c150f361cc46340529c7f345d2d067190d9046afa3f8a231e7c63661b216295ac0c6f367d8e807ea8f42ac6ba9f4705aeed428c5601613bfc72ecd61ff7d9e44944aedbfd79ec33ef05f412414579648bf08f41d1f673ef0364ddb1b325\"}"
+    },
+    {
+        "sender": "bia",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 11:50:20",
+        "content": "{\"iv\": \"da6ce07be24d989281d0d4531b8f424c\", \"ciphertext\": \"f65674110895eb9ecab397479cf688a2\", \"key\": \"561f92d5354a9071cf434716cbf2ecae6b6b07db82225afb5f56fcb14fe0a80573cd9fd439c2b01513cb472d8b0169ce38c5800f64dadac541428736edf619895ff0bc8657f19d31feea0dc9f98510fd592edb2af4fa32ae4d231bf6ee3c97cf232aca5d7e469785af6c852657a016820892854ff6d38c5185db98fd2988ab58\"}"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "alex",
+        "timestamp": "2025-12-30 19:03:47",
+        "content": "{\"iv\": \"edae4d0163cf8e2e32fa68ef2c3ea2ed\", \"ciphertext\": \"336c7eabb3ff257b95d6fe6a09a1f7d9\", \"key\": \"1b7161094aed881070dc46d052008e6f3f151eae2aaf5692ef2d176cd44dd55f0201e9e8627cb67f7afb83795104fc442aebf2064ef03fe29e5ac6087b8710f2042674616d802925ca85ae9dde24a12a5cf5301d38d8eee06a905a6540e6d41150669e1ef148a112c97f75613c96caed212e3ffe560b917dad8be36eb56ef01e\"}"
+    }
+]
