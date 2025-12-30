@@ -24,19 +24,17 @@ def append_to_file(username, msg_format):
     except Exception as e:
         print(e)
 
-def log_message(sender, receiver, content):
+def log_message(sender, receiver, content, is_sender):
     time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     msg_format = {
-        "sender": sender,
-        "receiver": receiver,
+        "sender": sender if is_sender else receiver,
+        "receiver": receiver if is_sender else sender,
         "timestamp": time,
         "content": content
     }
 
     append_to_file(sender, msg_format)
-    append_to_file(receiver, msg_format)
-
 
 def get_chat_history(sender, receiver):
     script_dir = os.path.dirname(os.path.abspath(__file__))

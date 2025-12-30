@@ -1,11 +1,13 @@
 import tkinter as tk
 from tkinter import messagebox
 from datetime import datetime
+from client.helper_functions.crypto import decrypt_msg
 
 def handle_incoming_message(window, sender, content):
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    decrypted_content = decrypt_msg(content, window.client.private_key)
     window.chat_display.config(state=tk.NORMAL)
-    window.chat_display.insert(tk.END, f"{sender}: {content}\n", "other_msg")
+    window.chat_display.insert(tk.END, f"{sender}: {decrypted_content}\n", "other_msg")
     window.chat_display.insert(tk.END, f"{current_time}\n\n", "other_time")
     window.chat_display.see(tk.END)
     window.chat_display.config(state=tk.DISABLED)
@@ -41,12 +43,13 @@ def handle_history_to_ui(window, history_data):
         sender = msg["sender"]
         content = msg["content"]
         timestamp = msg["timestamp"]
+        decypted_content = decrypt_msg(content, window.client.private_key)
 
         if sender == my_username:
-            window.chat_display.insert(tk.END, f"me: {content}\n", "self_msg")
+            window.chat_display.insert(tk.END, f"me: {decypted_content}\n", "self_msg")
             window.chat_display.insert(tk.END, f"{timestamp}\n\n", "self_time")
         else:
-            window.chat_display.insert(tk.END, f"{sender}: {content}\n", "other_msg")
+            window.chat_display.insert(tk.END, f"{sender}: {decypted_content}\n", "other_msg")
             window.chat_display.insert(tk.END, f"{timestamp}\n\n", "other_time")
 
     window.chat_display.config(state=tk.DISABLED)

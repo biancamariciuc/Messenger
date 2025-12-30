@@ -15,6 +15,7 @@ class Server:
         self.server_socket = None
         self.clients = {}
         self.running = False
+        self.public_keys = {}
 
     def start(self):
         try:
@@ -43,17 +44,19 @@ class Server:
     def handle_client(self, client_socket, address):
         try:
             client_id = str(uuid.uuid4())[:8]
-            username = client_socket.recv(1024).decode(FORMAT)
+            username = client_socket.recv(16384).decode(FORMAT)
 
             handle_login(username)
 
             self.clients[client_socket] = username
 
+            # client_socket.send("LOGIN_OK".encode(FORMAT))
+
             print_log("Connection", f"New connection from {address} assigned ID: {client_id} and the username: {username}")
             connected = True
             while connected:
                 try:
-                    msg = client_socket.recv(1024).decode(FORMAT)
+                    msg = client_socket.recv(16384).decode(FORMAT)
 
                     if not msg:
                         connected = False
@@ -68,16 +71,18 @@ class Server:
                         data = json.loads(json_data)
 
                         receiver_user = data["receiver"]
-                        message_content = data["content"]
+                        msg_for_them = data["msg_for_receiver"]
+                        msg_for_me = data["msg_for_sender"]
 
-                        log_message(username, receiver_user, message_content)
+                        log_message(username, receiver_user, msg_for_me, True)
+                        log_message(receiver_user, username, msg_for_them, False)
 
                         receiver_socket = search_socket_user(receiver_user, self.clients)
 
                         if receiver_socket:
                             format = {
                                 "sender": username,
-                                "content": message_content
+                                "content": msg_for_them
                             }
                             receiver_socket.send(f"RECEIVE_MSG:{json.dumps(format)}".encode(FORMAT))
                         else:
@@ -91,6 +96,14 @@ class Server:
 
                         history_json = json.dumps(history)
                         client_socket.send(f"HISTORY:{history_json}".encode(FORMAT))
+                    elif msg.startswith("PUB_KEY:"):
+                        key = msg.replace("PUB_KEY:", "")
+                        self.public_keys[username] = key
+                    elif msg.startswith("GET_KEY:"):
+                        target = msg.replace("GET_KEY:", "")
+                        if target in self.public_keys:
+                            resp = {"user": target, "key": self.public_keys[target]}
+                            client_socket.send(f"KEY_RESPONSE:{json.dumps(resp)}".encode(FORMAT))
                     else :
                         print_log("Server", "Unknown command!")
 
