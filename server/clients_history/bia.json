@@ -1,134 +1,38 @@
 [
     {
         "sender": "bia",
-        "receiver": "andrei",
-        "timestamp": "2025-12-16 08:16:27",
-        "content": "salut!"
-    },
-    {
-        "sender": "andrei",
-        "receiver": "bia",
-        "timestamp": "2025-12-16 08:16:34",
-        "content": "ce mai faci?"
-    },
-    {
-        "sender": "bia",
-        "receiver": "andrei",
-        "timestamp": "2025-12-16 08:16:39",
-        "content": "bine, tu?"
-    },
-    {
-        "sender": "andrei",
-        "receiver": "bia",
-        "timestamp": "2025-12-16 08:16:44",
-        "content": "ok, bine si eu"
-    },
-    {
-        "sender": "bia",
         "receiver": "ari",
-        "timestamp": "2025-12-16 08:16:53",
-        "content": "ok, coool"
-    },
-    {
-        "sender": "bia",
-        "receiver": "andrei",
-        "timestamp": "2025-12-16 08:32:28",
-        "content": "pot sa scriu acum"
-    },
-    {
-        "sender": "alex",
-        "receiver": "bia",
-        "timestamp": "2025-12-28 12:17:14",
-        "content": "salut"
-    },
-    {
-        "sender": "bia",
-        "receiver": "alex",
-        "timestamp": "2025-12-28 12:17:47",
-        "content": "a salut salut"
+        "timestamp": "2025-12-30 10:19:44",
+        "content": "7bf9dccaef170c9f9bc80f743d0ae00c96c570f8c1c52990510b878de925be7373c67bec5afea89110162221e0a13f0941d8755d492e943116cf960f7be513a90a163b31a48deed18202aa93789bb3ff54a642653a2c1f2a8b2c1ded1b73455803b29a240cd5c17819b55b3017c2cad2a5be81f9ab3cdc8b555efe413940b99c"
     },
     {
         "sender": "ari",
         "receiver": "bia",
-        "timestamp": "2025-12-28 12:18:01",
-        "content": "cine e bia?"
+        "timestamp": "2025-12-30 10:19:48",
+        "content": "10dd6dcf8767a81c916fc69b4609853451246784885bd9a5ace794308ff113cd37a0aacecea251d1ad58584a7e76d30ce70cc369a691c103f23255fe2ff544018b0ceb47d16e83b7f800d1804b19d5ad05b8e7302aaf395da686cddb959db2f8b98fb3cfe4065b87bd987db2a898a04b3968650e91b242e8c7eb6451fdf239c5"
     },
     {
         "sender": "bia",
         "receiver": "ari",
-        "timestamp": "2025-12-28 12:18:10",
-        "content": "da nu stiu nici eu"
+        "timestamp": "2025-12-30 10:19:52",
+        "content": "3e1daff91e788fa6a7b4ab889eaebc553d138fa793f6d34ecc02de5188bdd08cde83d321f91dc5996af92b40dce314b34be0f885121bff1576384d95f1a543389b88b57d627b8472c01439b20b07e359d94df66b787e03057b8e8a5e2ddce508679c3c210334d6423c78ee5865f38cf38960d8ff8ef19acb8427d62290a88b17"
     },
     {
-        "sender": "bia",
-        "receiver": "alex",
-        "timestamp": "2025-12-28 12:18:19",
-        "content": "bine, cio"
-    },
-    {
-        "sender": "bia",
-        "receiver": "andrei",
-        "timestamp": "2025-12-28 13:35:42",
-        "content": "e mai misto acum"
-    },
-    {
-        "sender": "andrei",
+        "sender": "ari",
         "receiver": "bia",
-        "timestamp": "2025-12-28 13:36:03",
-        "content": "de ce nu m apare numele?"
-    },
-    {
-        "sender": "bia",
-        "receiver": "andrei",
-        "timestamp": "2025-12-28 13:36:06",
-        "content": "ciudat"
-    },
-    {
-        "sender": "andrei",
-        "receiver": "bia",
-        "timestamp": "2025-12-28 13:42:02",
-        "content": "aici?"
-    },
-    {
-        "sender": "bia",
-        "receiver": "alex",
-        "timestamp": "2025-12-28 19:44:57",
-        "content": "hi"
-    },
-    {
-        "sender": "bia",
-        "receiver": "alex",
-        "timestamp": "2025-12-28 19:45:05",
-        "content": "ce zici?"
-    },
-    {
-        "sender": "bia",
-        "receiver": "alex",
-        "timestamp": "2025-12-28 19:45:12",
-        "content": "nu mai bine zic"
-    },
-    {
-        "sender": "alex",
-        "receiver": "bia",
-        "timestamp": "2025-12-28 19:45:23",
-        "content": "vorbesti singura"
+        "timestamp": "2025-12-30 10:19:59",
+        "content": "3c5bef2945232159a3f912a009c120181a3fee263a491c42a8bb7090dae2e7c58492e0bc3f21d1d57c4163c75315bad9c697bc930a4f715402ffb2759cf256b5340fd166ef475af29e9f1305679c6b14de544490a8a16d0c3311fb35a2ddfddbaedd6f1fded7a12c3c335d7fe994fb4a2665c4566467ed7a3252971e715a472a"
     },
     {
         "sender": "bia",
         "receiver": "ari",
-        "timestamp": "2025-12-28 20:01:11",
-        "content": "ok"
+        "timestamp": "2025-12-30 10:20:03",
+        "content": "12b1de11d2c2397b79cbef9a1ac0f8b80d976c29bc1cc680fa8f9ec29d988153219396189302d9528df1765a78ca32d67c6d153591806b6a23894df078c81a82749b5afc138162248783bb7884d4b0fa735e541a3465266ecea6d7c14fff741b4ae486616cefea90374f3930dda627e8227e3aad2686f311b410564a73503669"
     },
     {
         "sender": "bia",
-        "receiver": "andrei",
-        "timestamp": "2025-12-28 20:01:22",
-        "content": "ok"
-    },
-    {
-        "sender": "bia",
-        "receiver": "alex",
-        "timestamp": "2025-12-28 20:01:28",
-        "content": "ok"
+        "receiver": "ari",
+        "timestamp": "2025-12-30 10:20:11",
+        "content": "7ca8dd94de9144a9b179b78837793be64a351640187f1f93b333af50a0aeb90aa6588625488553e67081b4ef52c9a0ff0a04a778d15fbdc5e394b1587e80b4d066eadb825e2cff519f9f1089e7ef691b55cebe7a31d861321a0ad8609cac5514d3ea94277418391272a5acd9aaf2653a7ecf7ff722c83ed791586cf6517600f9"
     }
 ]

@@ -2,37 +2,37 @@
     {
         "sender": "bia",
         "receiver": "ari",
-        "timestamp": "2025-12-16 08:16:53",
-        "content": "ok, coool"
-    },
-    {
-        "sender": "andrei",
-        "receiver": "ari",
-        "timestamp": "2025-12-16 08:32:33",
-        "content": "dada, e ok"
+        "timestamp": "2025-12-30 10:19:44",
+        "content": "b2651d25539cbd1941dd71baaaf56302e716f974074810d5d6b74f757c0abe239a35e8a601af3591326126e46d2dc21338956b3e56b9ab038953c0bd744b46883fab715c3ddf3f6018fea3e8ea8e51a2ef95e8aba2f499b3da4ea209330ab5fda2b7148028b0d28c19ec2d1f86e8c2dea48c931d78220c8cdb1ddd7139752894"
     },
     {
         "sender": "ari",
         "receiver": "bia",
-        "timestamp": "2025-12-28 12:18:01",
-        "content": "cine e bia?"
+        "timestamp": "2025-12-30 10:19:48",
+        "content": "75397fae370fb0b445b9d91a2fcd613d6f01f2c3071f9c8a492bf8bb6254e59a25326b135f7cb01aa2a2d197145b5807b5c8da0c7c557802e4cf3732aace5480a912cb5bfafddbac821850bbab470f4fed0612b57e12342e44c760180de3436dac69b7224a4f33715a7bcd991ac07c9596a2d16c054c0f965ba6e3bac0848b17"
     },
     {
         "sender": "bia",
         "receiver": "ari",
-        "timestamp": "2025-12-28 12:18:10",
-        "content": "da nu stiu nici eu"
+        "timestamp": "2025-12-30 10:19:52",
+        "content": "c1da5a7221c5d79b926f282c7280ff74334fa1726fea02d59d98976fcbb5282c7ac7f0b49bce5b67ca0e422df94be6887d8a625a8c9521d243ececb15485e4ffcedc41513e6267729b626638e090ba46bda30dfc681fe1f5bcec322ef454e1a948a157273006addf070095890a8ca52a00b653ead9ea60fa4cb46a325e1fd566"
     },
     {
         "sender": "ari",
-        "receiver": "alex",
-        "timestamp": "2025-12-28 12:18:25",
-        "content": "hi"
+        "receiver": "bia",
+        "timestamp": "2025-12-30 10:19:59",
+        "content": "98aec43d0e6c06a4f9fc0a8c5c227ebbf36741d7b1d8c70b891c09b31e7d665a7cacadcd8af107c8076eb934468883fcf5d1c7d39b338cdc5e615e64e6f0f9b0ca3ea499bf3560e381f19fcfde3ab5cfad7d6ff335c6581b87705a56e6c219b8ffcdfcb920112eb43dd61a5c0929bee89b7e5f0d2cf64874311e4d295c56af1d"
     },
     {
         "sender": "bia",
         "receiver": "ari",
-        "timestamp": "2025-12-28 20:01:11",
-        "content": "ok"
+        "timestamp": "2025-12-30 10:20:03",
+        "content": "701233af39b4facafa2a65c2224a2a3fbd2464a37c9d3d66fbd047b92192ea1f3af2502186e32dd8e90b2f4239b18a8128404d17822cb06421bbc303df2d7c9ffb231949c833b1c268712f0138a8414b798458313601786d41232c6b3986c524bdcd2eceb61e4668500cb35103b034f3cac65253981a81e20850a753f9bb5443"
+    },
+    {
+        "sender": "bia",
+        "receiver": "ari",
+        "timestamp": "2025-12-30 10:20:11",
+        "content": "161ad417485d1f19bc5f0552c4022bfcbc68237ba69c1f38e5bca2a2f4f73ddc6a2cf58dbc4188b5c2901c20530f703e1e6f83ccd431e6c687d4a59e3cc5371dd5ec43d32eca8d6399661848890002408d816fe836280aec72af99c5da29f24b3db903b5275ba521ad2e39345203a03ec4bde3f7400d1ab00843d396ed6b27c2"
     }
 ]
