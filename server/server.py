@@ -2,14 +2,27 @@ import socket
 import threading
 import uuid
 from common.config import SERVER_HOST, SERVER_PORT, FORMAT, print_log
-from login_handler import handle_login
-from helper_functions.users import get_users, search_socket_user
+from helper_functions.users import *
 from helper_functions.messages import *
 from helper_functions.cryptoo import *
 
 
 class Server:
+    """
+    The core class handling network connections and data management.
+
+    This class listens for incoming connections, authenticates users, and
+    routes encrypted messages between clients. It also manages data persistence
+    by saving chat history and user public keys to disk.
+    """
     def __init__(self, host, port):
+        """
+        Initialize the class Server and create the directory for storage the public keys
+
+        Args:
+            host (str):  (127.0.0.1)
+            port (int): (5555)
+        """
         self.host = host
         self.port = port
         self.server_socket = None
@@ -20,6 +33,11 @@ class Server:
             os.makedirs("server_keys")
 
     def start(self):
+        """
+        Start the server loop to accept incoming connections.
+
+        Start a new thread for each connected client to handle communication concurrently.
+        """
         try:
             self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.server_socket.bind((self.host, self.port))
@@ -44,6 +62,16 @@ class Server:
             print_log("Server error", str(e))
 
     def handle_client(self, client_socket, address):
+        """
+        Handle the communication lifecycle for a specific connected client.
+
+        Processes incoming commands (LOGIN, SEND_MSG, GET_USERS, etc.) and does
+        the appropriate actions.
+
+        Args:
+            client_socket (socket): The active socket connection for the client.
+            address (tuple): The (IP, Port) of the connected client.
+        """
         try:
             client_id = str(uuid.uuid4())[:8]
             username = client_socket.recv(16384).decode(FORMAT)
@@ -114,7 +142,8 @@ class Server:
                         print_log("Server", "Unknown command!")
 
 
-                except:
+                except Exception as e:
+                    print(e)
                     connected = False
                     break
         except Exception as e:

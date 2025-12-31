@@ -5,7 +5,7 @@ from ui.logic.message_helper import *
 from common.config import SERVER_HOST, SERVER_PORT
 
 
-from ui.window_helpers import center_window, clear_window
+from ui.logic.window_helpers import center_window, clear_window
 from ui.window_params import WIDTH, HEIGHT, TITLE_X, TITLE_Y, GAP
 from ui.ui_components import *
 
@@ -31,7 +31,7 @@ class Main_window(tk.Tk):
 
         self.username = create_input_box(self, "Type here your username...", TITLE_X, TITLE_Y + GAP, 400, 30, 12)
         self.username.bind('<Return>', submit_action)
-        create_submit_button(self, "Login", submit_action, TITLE_X, TITLE_Y + 150, 200, 40)
+        create_submit_button(self, "Submit", submit_action, TITLE_X, TITLE_Y + 150, 200, 40)
 
     def show_message_page(self):
         clear_window(self)

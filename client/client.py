@@ -7,7 +7,20 @@ import time
 
 
 class Client:
+    """
+    Class for every connected client
+
+    This class takes care for the socket connection, encryption,
+    key storage and communication with ui
+    """
     def __init__(self, host, port):
+        """
+        Initialize the class Client
+
+        Args:
+            host (str): The host of the server (127.0.0.1)
+            port (int): The port of the server (5555)
+        """
         self.host = host
         self.port = port
         self.client_socket = None
@@ -20,6 +33,19 @@ class Client:
         self.users_keys = {}
 
     def connect(self, username):
+        """
+        Connect to server
+
+        Load the existent keys (public and private) if there exists
+        otherwise generate keys. Make the connection via socket with server.
+        Sned the username to server. Send the public key to server for later usage.
+
+        Args:
+            username of the user
+
+        Returns:
+            true if the client is connected
+        """
         try:
             pub, priv = load_keys(username)
             if not pub:
@@ -51,20 +77,33 @@ class Client:
             print_log("Client error", str(e))
 
     def request_users(self):
+        """Request users from server"""
         if self.client_socket:
             self.client_socket.send("GET_USERS".encode(FORMAT))
 
     def request_chat_history(self, target_username):
+        """Request chat history from server"""
         if self.client_socket:
             format = {"target": target_username}
             msg = f"GET_HISTORY:{json.dumps(format)}"
             self.client_socket.send(msg.encode(FORMAT))
 
     def request_public_key(self, target_user):
+        """Request public key from server"""
         msg = f"GET_KEY:{target_user}"
         self.client_socket.send(msg.encode(FORMAT))
 
     def send_chat_message(self, receiver_username, message):
+        """
+        Send encrypted  message to server
+
+        First we verify if we have the receiver key. if not we request it
+        from server(where it is stored on the disk). If we have the receiver key,
+        we encrypt the message for the receiver and also for current sender and send it to server.
+
+        Args:   receiver_username - selected username by the current client
+                message of the chat message
+        """
         if self.client_socket:
             if receiver_username not in self.users_keys:
                 self.request_public_key(receiver_username)
@@ -81,6 +120,11 @@ class Client:
             self.client_socket.send(msg.encode(FORMAT))
 
     def listen_for_messages(self):
+        """
+        Listen for chat messages from server
+
+        Handle every request from server and call the according functions from ui.
+        """
         while True:
             try:
                 message = self.client_socket.recv(16384).decode(FORMAT)

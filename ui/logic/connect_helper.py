@@ -1,7 +1,12 @@
 from tkinter import messagebox
 
 def on_click_connect(window):
+    """
+    Handles the logic when the login button is clicked.
 
+    Retrieves the username entered by the user and calls the connection function
+    to establish a session with the server.
+    """
     username = window.username.get()
 
     if not username:

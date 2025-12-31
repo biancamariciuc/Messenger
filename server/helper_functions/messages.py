@@ -2,8 +2,18 @@ import json
 import os
 from datetime import datetime
 
+"""Module for different actions to the messages."""
 
 def append_to_file(username, msg_format):
+    """
+    Append messages to a file.
+
+    Search the file by username, append the format of the message
+
+    Args:
+        msg_format (str): The format of the message.
+        username (str) : The username (unique) for saving the message history.
+    """
     script_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(script_dir)
     folder_path = os.path.join(parent_dir, "clients_history")
@@ -25,6 +35,17 @@ def append_to_file(username, msg_format):
         print(e)
 
 def log_message(sender, receiver, content, is_sender):
+    """
+        Prepare the message for saving it to the file.
+
+        Creates a format containing the timestamp, sender,
+        receiver, and content, then appends it to the user's history log.
+    Args:
+        sender (str): The username of the client logging the message
+        receiver (str): The username of the chat partner.
+        content (str): The content of the message
+        is_sender (bool): Whether the message is sender or receiver
+        """
     time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     msg_format = {
@@ -37,6 +58,15 @@ def log_message(sender, receiver, content, is_sender):
     append_to_file(sender, msg_format)
 
 def get_chat_history(sender, receiver):
+    """
+    Retrieve the chat history between sender and receiver.
+
+    Args:
+        sender (str): The username of the client logging the message
+        receiver (str): The username of the chat partner.
+    Returns:
+        conversation (list): The conversation of the message
+    """
     script_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(script_dir)
     folder_path = os.path.join(parent_dir, "clients_history")

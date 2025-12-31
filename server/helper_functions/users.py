@@ -1,7 +1,15 @@
 import json
 import os
 
+"""Module that takes care of the users"""
+
 def get_users():
+    """
+    Retrieves the list of registered users from the JSON storage.
+
+    Returns:
+        list: A list of dictionaries representing the registered users.
+    """
     script_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(script_dir)
     folder_path = os.path.join(parent_dir, "clients_history")
@@ -17,6 +25,7 @@ def get_users():
     return users_list
 
 def exists_user(username, users_list):
+    """Returns true if the user exists in the users list, false otherwise."""
     user_exists = False
     for user in users_list:
         if user["username"] == username:
@@ -25,7 +34,39 @@ def exists_user(username, users_list):
     return user_exists
 
 def search_socket_user(username, dic):
+    """Finds the active socket connection for a specific user.."""
     for sock, name in dic.items():
         if name == username:
             return sock
     return None
+
+def handle_login(username):
+    """
+    Handles the login or registration process for a user.
+
+    Checks if the user is already registered. If not, it adds the username
+    to the global users list and creates an empty JSON file for their chat history.
+    """
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    folder_path = os.path.join(script_dir, "clients_history")
+    users_path = os.path.join(folder_path, "users.json")
+    user_history_path = os.path.join(folder_path, f"{username}.json")
+
+    users_list = get_users()
+
+    user_exists = exists_user(username, users_list)
+
+    if user_exists:
+        return "Welcome back!"
+
+    else:
+        users_list.append({"username": username})
+        with open(users_path, "w") as f:
+            json.dump(users_list, f, indent=4)
+
+        with open(user_history_path, "w") as f:
+            json.dump([], f)
+
+        print(f"Server: Registered new user '{username}'")
+        return "Account created!"
