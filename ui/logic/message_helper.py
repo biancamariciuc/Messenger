@@ -1,11 +1,89 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, filedialog
 from datetime import datetime
 from client.helper_functions.crypto import decrypt_msg
+import base64
+import io
+from PIL import Image, ImageTk
+from ui.window_params import EMOJIS
+from ui.ui_components import create_picker_window
+
 
 """
-    Module for handling UI updates and event triggers.
+    Module for handling UI updates and event triggers and multimedia data.
 """
+
+def compress_image(file_path):
+    """
+    Reads an image from a file path, compresses it, and encodes it to a string.
+
+    This function opens the image, converts it to RGB format, resizes it,
+    and converts the binary data into a Base64 string
+    so it can be saved in a JSON object.
+
+    Args:
+        file_path: path to the image
+    Returns:
+        final_string: compressed image encoded as a Base64 string
+    """
+    if not file_path or isinstance(file_path, tuple):
+        return None
+    try:
+        with open(file_path, "rb") as f:
+            original_img = Image.open(f)
+            rgb_img = original_img.convert("RGB")
+            rgb_img.thumbnail((250, 250))
+
+            buffer = io.BytesIO()
+            rgb_img.save(buffer, format="JPEG", quality=70)
+
+            img_bytes = buffer.getvalue()
+            encoded_image = base64.b64encode(img_bytes  )
+            final_string = encoded_image.decode('utf-8')
+            return final_string
+    except Exception as e:
+        print(f"Error image: {e}")
+        return None
+
+
+def display_content(window, sender, content, tag_msg, tag_time):
+    """
+    Helper function to display conversation content in a formatted way.
+
+   It checks the content type:
+    - If it is an image, it performs the inverse process of the compress function
+      (decodes Base64) and displays the photo.
+    - If it is normal text, it inserts it directly into the chat.
+
+    Args:
+        window: The main UI window instance.
+        sender: the username of the image seender
+        content: the text message or the Base64 string of an image.
+        tag_msg: tag message - 'self_msg' or 'other_msg'
+        tag_time: tag time
+    """
+    if content.startswith("[IMAGE]:"):
+        try:
+            base64_data = content.replace("[IMAGE]:", "")
+            img_bytes = base64.b64decode(base64_data)
+            memory_buffer = io.BytesIO(img_bytes)
+            pil_image = Image.open(memory_buffer)
+            photo = ImageTk.PhotoImage(pil_image)
+
+            if not hasattr(window, "images"):
+                window.images = []
+            window.images.append(photo)
+
+            window.chat_display.insert(tk.END, f"{sender}:\n", tag_msg)
+            window.chat_display.image_create(tk.END, image=photo)
+            window.chat_display.insert(tk.END, "\n")
+        except Exception as e:
+            window.chat_display.insert(tk.END, f"{sender}: [Image Error]\n", tag_msg)
+    else:
+        window.chat_display.insert(tk.END, f"{sender}: {content}\n", tag_msg)
+
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    window.chat_display.insert(tk.END, f"{current_time}\n\n", tag_time)
 
 def handle_incoming_message(window, sender, content):
     """
@@ -18,11 +96,9 @@ def handle_incoming_message(window, sender, content):
         sender (str): The sender of the incoming message
         content (str): The content to be inserted in the chat_display
     """
-    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     decrypted_content = decrypt_msg(content, window.client.private_key)
     window.chat_display.config(state=tk.NORMAL)
-    window.chat_display.insert(tk.END, f"{sender}: {decrypted_content}\n", "other_msg")
-    window.chat_display.insert(tk.END, f"{current_time}\n\n", "other_time")
+    display_content(window, sender, decrypted_content, "other_msg", "other_time")
     window.chat_display.see(tk.END)
     window.chat_display.config(state=tk.DISABLED)
 
@@ -46,15 +122,70 @@ def send_message(window):
 
     window.client.send_chat_message(window.selected_user, text)
 
-    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     window.chat_display.config(state=tk.NORMAL)
-    window.chat_display.insert(tk.END, f"me: {text}\n", "self_msg")
-    window.chat_display.insert(tk.END, f"{current_time}\n\n", "self_time")
+    display_content(window, "me", text, "self_msg", "self_time")
     window.chat_display.config(state=tk.DISABLED)
     window.chat_display.see(tk.END)
 
     window.msg_input.delete(0, tk.END)
+
+def send_image_file(window):
+    """
+    Logic for selecting, processing, and sending an image.
+
+    This function opens a file dialog for the user to select an image,
+    calls the compress_image function, sends it to the selected user
+    via the client socket, and updates  display.
+    """
+
+    file_path = filedialog.askopenfilename(
+        title="Select image",
+        filetypes=[("Images", "*.jpg *.jpeg *.png")]
+    )
+
+    base64_str = compress_image(file_path)
+
+    if base64_str:
+        msg_content = f"[IMAGE]:{base64_str}"
+        window.client.send_chat_message(window.selected_user, msg_content)
+        window.chat_display.config(state=tk.NORMAL)
+        display_content(window, "me", msg_content, "self_msg", "self_time")
+        window.chat_display.see(tk.END)
+        window.chat_display.config(state=tk.DISABLED)
+
+
+
+def populate_emojis(target_frame, input_field):
+    """
+    Helper function that populates the picker window with emojis.
+
+    This function iterates through the global EMOJIS list and creates a button
+    for each one. It uses a grid system to arrange them (6 items per row)
+    """
+    r = 0
+    c = 0
+    for em in EMOJIS:
+        btn = tk.Button(
+            target_frame,
+            text=em,
+            font=("Segoe UI Emoji", 12),
+            width=4,
+            command=lambda x=em: input_field.insert(tk.END, x)
+        )
+        btn.grid(row=r, column=c, padx=2, pady=2)
+
+        c += 1
+        if c > 5:
+            c = 0
+            r += 1
+
+def open_emoji_picker(window):
+    """
+    Open the picker window and populate it.
+    """
+    picker, emoji = create_picker_window(window)
+    populate_emojis(emoji, window.msg_input)
 
 
 def handle_history_to_ui(window, history_data):
@@ -72,18 +203,16 @@ def handle_history_to_ui(window, history_data):
     window.chat_display.config(state=tk.NORMAL)
     window.chat_display.delete(1.0, tk.END)
     my_username = window.client.username
+    window.images = []
     for msg in history_data:
         sender = msg["sender"]
         content = msg["content"]
-        timestamp = msg["timestamp"]
-        decypted_content = decrypt_msg(content, window.client.private_key)
+        decrypted_content = decrypt_msg(content, window.client.private_key)
 
         if sender == my_username:
-            window.chat_display.insert(tk.END, f"me: {decypted_content}\n", "self_msg")
-            window.chat_display.insert(tk.END, f"{timestamp}\n\n", "self_time")
+            display_content(window, "me", decrypted_content, "self_msg", "self_time")
         else:
-            window.chat_display.insert(tk.END, f"{sender}: {decypted_content}\n", "other_msg")
-            window.chat_display.insert(tk.END, f"{timestamp}\n\n", "other_time")
+            display_content(window, sender, decrypted_content, "other_msg", "other_time")
 
     window.chat_display.config(state=tk.DISABLED)
     window.chat_display.see(tk.END)

@@ -52,8 +52,8 @@ class Main_window(tk.Tk):
         self.msg_input.bind('<Return>', submit_action)
         self.send_btn.config(command=submit_action)
 
-        self.emoji_btn.config(command=lambda: print("emoji"))
-        self.upload_btn.config(command=lambda: print("image"))
+        self.emoji_btn.config(command=lambda: open_emoji_picker(self))
+        self.upload_btn.config(command=lambda: send_image_file(self))
 
 
 if __name__ == '__main__':

@@ -127,7 +127,7 @@ class Client:
         """
         while True:
             try:
-                message = self.client_socket.recv(16384).decode(FORMAT)
+                message = self.client_socket.recv(5242880).decode(FORMAT) #5MB pentru imagini
 
                 if message.startswith("LIST_USERS:"):
                     json_str = message.replace("LIST_USERS:", "")

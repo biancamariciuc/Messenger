@@ -74,7 +74,7 @@ class Server:
         """
         try:
             client_id = str(uuid.uuid4())[:8]
-            username = client_socket.recv(16384).decode(FORMAT)
+            username = client_socket.recv(5242880).decode(FORMAT)
 
             handle_login(username)
 
@@ -85,7 +85,7 @@ class Server:
             connected = True
             while connected:
                 try:
-                    msg = client_socket.recv(16384).decode(FORMAT)
+                    msg = client_socket.recv(5242880).decode(FORMAT)
 
                     if not msg:
                         connected = False
