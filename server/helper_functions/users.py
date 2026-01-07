@@ -3,6 +3,21 @@ import os
 
 """Module that takes care of the users"""
 
+
+def get_clients_history_path():
+    """
+    Retrun the path if the directory.
+    Create the directory if it doesn't exist.
+    """
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    server_dir = os.path.dirname(current_dir)
+    folder_path = os.path.join(server_dir, "clients_history")
+
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+
+    return folder_path
+
 def get_users():
     """
     Retrieves the list of registered users from the JSON storage.
@@ -10,9 +25,7 @@ def get_users():
     Returns:
         list: A list of dictionaries representing the registered users.
     """
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    parent_dir = os.path.dirname(script_dir)
-    folder_path = os.path.join(parent_dir, "clients_history")
+    folder_path = get_clients_history_path()
     users_path = os.path.join(folder_path, "users.json")
 
     users_list = []
@@ -48,8 +61,8 @@ def handle_login(username):
     to the global users list and creates an empty JSON file for their chat history.
     """
 
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    folder_path = os.path.join(script_dir, "clients_history")
+    folder_path = get_clients_history_path()
+
     users_path = os.path.join(folder_path, "users.json")
     user_history_path = os.path.join(folder_path, f"{username}.json")
 

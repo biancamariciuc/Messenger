@@ -73,6 +73,8 @@ def get_chat_history(sender, receiver):
     file_path = os.path.join(folder_path, f"{sender}.json")
 
     conversation = []
+    if not os.path.exists(file_path):
+        return []
 
     if os.path.exists(file_path):
         try:

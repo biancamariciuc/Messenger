@@ -1,0 +1,20 @@
+[
+    {
+        "sender": "maria",
+        "receiver": "andrei",
+        "timestamp": "2026-01-07 22:46:47",
+        "content": "{\"iv\": \"03e57f4abecf5cb2f87d79c88b262c27\", \"ciphertext\": \"59d7aaef320dc96ef2d0eca860cb6321\", \"key\": \"5cec212feaa7f3424a6ba0372e55e62f186ccab602449dbd2f26afbbd678c274d42acc6d4dfe8b27692166110b4b0c213db618513763f12a13c034447cc654430a465a32dd4c24ec3c7d9ccaa7207d6601be432d821a6d0ce163f4fc82b022dd8c5751041d4a154f8217b79c1506c31cca98e523a0fe5d1c8c1a96716586bdad\"}"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "maria",
+        "timestamp": "2026-01-07 22:46:51",
+        "content": "{\"iv\": \"53d236da619c9897f8dcc6066919e968\", \"ciphertext\": \"ff1ab4f58b0257c0a6e4f19b2a2a6f09\", \"key\": \"343fa5ef826cda022eb16be4af22331f688c178455fd9d33ac3eedaf4ac446ca0501e907a7bc76e0f76cbc887beb770206d80d768a0c7f5621ee817e60bda4632adb7d40d329c7313fc2e1130afea4669d6d5d8ef2a5fe1dae2f231a77885efcd58ce533538e6c859a0942455a958e224806a2168b82dd8226f123a1742808ee\"}"
+    },
+    {
+        "sender": "maria",
+        "receiver": "andrei",
+        "timestamp": "2026-01-07 22:46:55",
+        "content": "{\"iv\": \"f4db98a0b5cf33edbf0564c41ce49f90\", \"ciphertext\": \"5db6d27a643803a8b0b6e9e3b4f543d1\", \"key\": \"8fb71f1d9b7591fbeb9002bb92f8d92a0c71b32973e2aaddaf5ddf291e0a78f5212fb521dd06524a57a4990850989a98344fb5ffa6eaf5fdb89ca566e099cd82eb14c7c121412d988884a3a293aaefbe8dab7658d57edc75fa5b8e956850828f600f5ff9fc19fcf37d56ab17c68fa61a5f2e801231fd3006ffdae8fcae429456\"}"
+    }
+]

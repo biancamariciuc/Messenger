@@ -77,6 +77,7 @@ class Server:
             username = client_socket.recv(5242880).decode(FORMAT)
 
             handle_login(username)
+            client_socket.send(f"LOGIN_WORKED".encode(FORMAT))
 
             self.clients[client_socket] = username
 

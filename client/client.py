@@ -62,7 +62,11 @@ class Client:
             self.username = username
             self.client_socket.send(username.encode(FORMAT))
 
-            time.sleep(0.1)
+            response = self.client_socket.recv(1024).decode(FORMAT)
+
+            if response != "LOGIN_WORKED":
+                print("Server refusrd the connection or give some error.")
+                return False
 
             pem_key = self.public_key.save_pkcs1().decode(FORMAT)
             msg = f"PUB_KEY:{pem_key}"

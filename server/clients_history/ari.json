@@ -178,5 +178,11 @@
         "receiver": "ari",
         "timestamp": "2026-01-07 18:04:51",
         "content": "{\"iv\": \"d0b920ed3f29825e8dbd25d84f79e82b\", \"ciphertext\": \"7bcd4f52c48b61aeb5d676a782bb935d\", \"key\": \"27face4559d0d93766d7d900e90c82a90ff692bcc7783608c2bc093d755be778e735b4ca2f6f47327af01115455803cfdea54b27a884202074e5c2ce3e2e12455d797bf3af7bc871415e1fb0cf28aa7f8216eef08624e68193fb5067de1afc864e550e15137b976920fd5f4a6a5a46d3bf3cb348233acf551a5181261a732b7b\"}"
+    },
+    {
+        "sender": "ari",
+        "receiver": "bia",
+        "timestamp": "2026-01-07 22:04:47",
+        "content": "{\"iv\": \"f76f02fde70536ad7d91b62d107af955\", \"ciphertext\": \"192b633a03aa7f40c60ec34c5c772849\", \"key\": \"328e4112e6a6dc283a5137f93a047bc157688af1ec43cb5d7c173c4dda369dbb8b8987cc448a2f2425d5f974869f08b994377dd3e58a9992dc3b385cd52b8cf6a7e2a41fe4c8dd712287270fc5671b2b344394a467c34396b994f763b1bc7ed12da0d9f09eaa59a695600cc2a0ff220e3f20f7355222cc3745c3be5d1b2d94b0\"}"
     }
 ]
