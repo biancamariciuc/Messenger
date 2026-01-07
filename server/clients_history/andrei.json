@@ -46,5 +46,23 @@
         "receiver": "ari",
         "timestamp": "2026-01-07 18:04:51",
         "content": "{\"iv\": \"d4fd61714105f1d34a41edc10bedaa20\", \"ciphertext\": \"51e0e2a9e72168eb5b844cf7902a51ec\", \"key\": \"04c9bac40602d4f5c4f6e848f116bd20e79bd82851f03f94770d509af76bd2ab0a561846034838c3dd7c80ffe8236198db501b7c8d8f6d7075a1d0105bcff58ef6108e8c15fa57c306e61c3b955ca43ae00636c718e7a0061ca552f44c4c6bca14a114410239eb239a29ef3098ff1a8903aaf780005378a614cfce5453868a47\"}"
+    },
+    {
+        "sender": "maria",
+        "receiver": "andrei",
+        "timestamp": "2026-01-07 22:46:47",
+        "content": "{\"iv\": \"5a7e12f3ed3d862af05ec4acb1dc6588\", \"ciphertext\": \"927b3ee67a934e7e2ea6a6604940a0dc\", \"key\": \"44eeb582753bd4866bbf4a5495750be91f9c30875c254ada0bfb3919e12e62a2edf8b9ab62a7b02b77c58b9e6cdcafb42caa56e22cb213af4b1725bd9722be4a5345111af7afde9587eab037cd2d0613f142ced533957f00663da84f7103d54aa989d3319bb7d78c688802e05a1ea8d6291b7df11251ea85500c9e7052e26d9a\"}"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "maria",
+        "timestamp": "2026-01-07 22:46:51",
+        "content": "{\"iv\": \"bf824d33e3a20291e8f134c18fc0ba4f\", \"ciphertext\": \"137f38d6de4d17e0220788534d37e096\", \"key\": \"91df1e8795e6c8d7bfc57f267d7f3258b1e87e34cc7cacc798fd94d64bc33e6b657edec9d0dcecefbfc3824860c36941f69891e77c96ad8575f4cf80e39c7b69f6713e1495cf2030d7510ac2ecd2161d1b248c8ee0084e5c48c4e32cd7ca5a589b89766beb7857338828f48505786cd97605bafcf088c082e0c5bd20691e703d\"}"
+    },
+    {
+        "sender": "maria",
+        "receiver": "andrei",
+        "timestamp": "2026-01-07 22:46:55",
+        "content": "{\"iv\": \"f8b42dd7221624bd5149d90a6792fba3\", \"ciphertext\": \"d118f47b7201bc8b51ba40b934a21002\", \"key\": \"58dcb211a6e4e85390a5fe93a406d3d149b5e68f2983231746ad395c8f585d9bcf33dcbfb62c663223c6650e53b028a78cfbcde08138313ea8365c83b1b90df76a9a895d20398d0a508a24ef06cc2949c3920c42d7343e9ef1cabf3a6c006de752b9a9fed732980b0741081533e711c5d53877c630789ca2c6bb3e4dfb751861\"}"
     }
 ]
