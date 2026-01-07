@@ -1,26 +1,50 @@
 [
     {
-        "sender": "bia",
-        "receiver": "andrei",
-        "timestamp": "2025-12-30 19:03:29",
-        "content": "{\"iv\": \"85891eaafde28c3355899dc3ce3c7c87\", \"ciphertext\": \"a38d00401036f7ddc9697cbe5a452c64\", \"key\": \"5b6845de40dbe01874941c7f830d139427d3e2aec752a75c7c997c34a41ec5a9dcd839f5224438ed5375b204af5ecf3bd7d5c2a1502724ba0bc5b32031f98d73f0201307709c38146433108f3ce2954f89cfaf9c2bc1f8ec374d4990e1e05191005447d864fd04fa90276634b3259319f1ae39dc67405d38bd76538cbc750317\"}"
-    },
-    {
         "sender": "andrei",
         "receiver": "bia",
-        "timestamp": "2025-12-30 19:03:34",
-        "content": "{\"iv\": \"64fbf43470c8baf595983dd103a58765\", \"ciphertext\": \"8aa557e57505d9c747a8f3be17b8b3a1\", \"key\": \"483cb78fcd668416f703b3423d89d6825ffece020f0b0e04318287814bc6d00acc65ff5ababc55ba6eb450a62aa26fde367e2570ee451b127d32dcbac36ffd97fd52360e94476e0bfb30146706ccdf4e0fc992a938f42a08cacf3f93276bd32758c7d1f696e14ac8ccb319eb381b2d17cd381d214dbda230a739620b88625dd8\"}"
+        "timestamp": "2026-01-07 18:00:20",
+        "content": "{\"iv\": \"b0e6f3abf8061f83b1c7dbacef473054\", \"ciphertext\": \"f54e8a691f9ca73a6ede0266d8d6216d\", \"key\": \"1db8f9e1c61fee94ec7a3988f5141c2fed65c75ac2c5c97600e0e26f7d2c73bc983724d4cdcae8c72bd15b08f71a77cebe5b6828a03c11122a907c420fd27c2b19591a67cf992690ae3bad9e4b3ba0f9e2cc3442c6862aab8b4c3ad4eda2315f87bd9d6be6a779bb9c84ade5dfdedc875860d0e1ccf49da2dc0d888b92d3b385\"}"
     },
     {
-        "sender": "bia",
+        "sender": "ari",
         "receiver": "andrei",
-        "timestamp": "2025-12-30 19:03:36",
-        "content": "{\"iv\": \"3f0fc14ad491af9b89faa0acfaff6e96\", \"ciphertext\": \"315c5be02ee50e7e49c6b37f38d398c8\", \"key\": \"13bbe172702981e590a04f681bd6db4e925ff75fcd0279f7402cb64bba954d93ef3bbce564a17210959943877ddbe9fe5ccbbcc456e2ee66c9e8d9dce3ef9e9033d1a14a75a22b8568a22d8f072476824c0c258fbae12bf13da7c5bd4d567cc164f06a7ff885719bf7d508513ea82c883cb835be811091b3fb3a4e68ef040779\"}"
+        "timestamp": "2026-01-07 18:01:23",
+        "content": "{\"iv\": \"74e3a0432a106a5b2fbe625a39118f74\", \"ciphertext\": \"f5cf454c3f7c3a369664b71ef0625605\", \"key\": \"8c44b7d6f8fbf24f67c33cdfa980fd916c061fa16c41815ba71fabba67105e9989f8afe84f9e583748ddca3d691f196ac5b33d86b2324707362b9ea819a59fd65e71397a55cb283ab84b15d770b60ff05c0ec004bbf73497748fa73e59d2cd13c2a9e50af1ba40fe8a30fdbedde5b2e9e8e63fa34354a6b399bd826718b30c9a\"}"
+    },
+    {
+        "sender": "ari",
+        "receiver": "andrei",
+        "timestamp": "2026-01-07 18:04:21",
+        "content": "{\"iv\": \"5a9b0f50370059c86e6deb47e5d90073\", \"ciphertext\": \"6aad96a1379a64942ec7f041f3abbcd7\", \"key\": \"411271f189fb869c20af4b5d4e223f17d89ecd2a440ab2f56f85683f8f3a6a70b596e1310d4a585568f57e189e847a15519bd567f184ed7702a8aac09ae20366e3636fa7f0eaaf1a09b94960af9fb8c3112f80a3d79feeb7de4150fb51d2de36ba3a76e9faa41a6eb6fab3bce2a144a4eb59278510b0e9f7bcc538bd81051c1c\"}"
     },
     {
         "sender": "andrei",
-        "receiver": "alex",
-        "timestamp": "2025-12-30 19:03:47",
-        "content": "{\"iv\": \"0ef3c1c098c08a738612b25b578f27a8\", \"ciphertext\": \"e6d27f262641bf4cfe1abf4cef2012a0\", \"key\": \"24ef6d4381843764b98d0fa198f1fc7dbebc85137f7624e75174d2fab72e22b61ab642c4bdd2e282d25825dbf3e6b33eec2172e8ae1a138da69b6d5a86570d40635e6e2cb4f53295b83369f65cb69eba55cbe992d3b5753d461e97e1dd6532528c195bb8a5b143226bcafd014d5cdc7603180cf5874834d4d95a07c6aa00d36b\"}"
+        "receiver": "ari",
+        "timestamp": "2026-01-07 18:04:25",
+        "content": "{\"iv\": \"0b6c7dc8449cadbd2d627b2c9a29fe48\", \"ciphertext\": \"e5057e72ccfe7baf807e26c12aec829c\", \"key\": \"4766caf32e2ec3fa6a33d14834ac293ea851ac3a7daf5592a36cc3a99ed6a996b97cc05d57e996f25db6a8ce9f2b3cec361701a48e402428f85a1135183d1c8061ba4f3e6be5d8d5bbfe6f6213f24777cfd81b7877a572ad64865dfeae264bf949414012ddfb3c4aafd405029a4f94c83c025c9ac5ea1b6b5292b381864584df\"}"
+    },
+    {
+        "sender": "ari",
+        "receiver": "andrei",
+        "timestamp": "2026-01-07 18:04:27",
+        "content": "{\"iv\": \"3407b17f7b5fb8a61d029c0578e9e86a\", \"ciphertext\": \"1b8f2f3c652060a343a08d543dc076cd\", \"key\": \"3d2fb2d6060a79ba5ff8d3ff36e0e0b70a5adde1fc9b7535a77952d2e6b55b357eef3c576a2dbab9653531ae5db0c333ebe5436edeaa3688838aee5adc47e18b3a200854de942618e1c6f5335a36ff6264cef116b8027aa84272207feaab9ddbc1ba5914f9a11ed83a73f63b57989c6f1f7e522bd13c1f018bdea7f899b2812d\"}"
+    },
+    {
+        "sender": "ari",
+        "receiver": "andrei",
+        "timestamp": "2026-01-07 18:04:30",
+        "content": "{\"iv\": \"a0e518ff4a645c5a8d420b0c48f2b09a\", \"ciphertext\": \"c3b26a3fe92302022f74847269437d26\", \"key\": \"7f9076cd3a46706b1b1f78c1568851aff9837db2cccad2271194dda29207d54a6a704ddd32868968a7179f5d6a134f0277a1c8d820f467c1c97cd9c1ec4a1d0f7d311a8a952bd8df1cafd171c07e6fa921fa3c342f0c38cfd1cd7e064b60d2e1abd7a00ad9264e71c9f5e897c3348602596c6b8e0d64da9e2f424cb15194b835\"}"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "ari",
+        "timestamp": "2026-01-07 18:04:34",
+        "content": "{\"iv\": \"516ce65ccb19a41afaef48711a4c53bd\", \"ciphertext\": \"c4b1a8570b1cd1cf98afab25fcb1fd28\", \"key\": \"1316bd6fcd6c8110e294f4e4c445cb95be6b4e82e7ef0d504827be3061ba8217b32c6311bf8975637479d3322763f6b97e00a2c596250b7770e0886a886d19e67fad2cdf5fbbcfdd695f6be1ce94544cece1a3f369dce92a35f7ac5cfa198519353aa4efc8e4f187b4179e9f90540c6087b321d86fd19c73e9bddf627316c422\"}"
+    },
+    {
+        "sender": "andrei",
+        "receiver": "ari",
+        "timestamp": "2026-01-07 18:04:51",
+        "content": "{\"iv\": \"d4fd61714105f1d34a41edc10bedaa20\", \"ciphertext\": \"51e0e2a9e72168eb5b844cf7902a51ec\", \"key\": \"04c9bac40602d4f5c4f6e848f116bd20e79bd82851f03f94770d509af76bd2ab0a561846034838c3dd7c80ffe8236198db501b7c8d8f6d7075a1d0105bcff58ef6108e8c15fa57c306e61c3b955ca43ae00636c718e7a0061ca552f44c4c6bca14a114410239eb239a29ef3098ff1a8903aaf780005378a614cfce5453868a47\"}"
     }
 ]

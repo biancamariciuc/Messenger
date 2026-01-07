@@ -1,3 +1,4 @@
+"""Module for useful global parameters used in the ui part"""
 WIDTH = 800
 HEIGHT = 600
 
@@ -8,6 +9,7 @@ GAP = 80
 WIDTH_INPUT = 400
 HEIGHT_INPUT = 30
 
+#generat de AI
 EMOJIS = [
     # 😀 Smileys & Emotion
     "😀","😁","😂","🤣","😃","😄","😅","😆","😉","😊","😋","😎","😍","😘","🥰","😗","😙","😚",

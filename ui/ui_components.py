@@ -3,13 +3,38 @@ from ui.logic.window_helpers import center_emoji_window
 FONT = "Courier New"
 FONT_EMOJI = "Segoe UI Emoji"
 
+"""Module that defines and handles all visual components used in the application."""
+
 def create_title_box(window, content, x, y, size):
+    """
+    Creates a title for the first window shown to the user
+
+    Args:
+        window: the window to show
+        content: the actual title
+        x: the x position of the window
+        y: the y position of the window
+        size: the size of the window
+    """
     label = tk.Label(window, text=content, font=(FONT, size))
     label.place(x=x, y=y, anchor="center")
 
 
 
 def create_input_box(window, placeholder, x, y, width, height, size, anch="center"):
+    """
+    Creates the input box where the user can write either the message either the ID.
+
+    Args:
+        window: the window to show
+        placeholder: the placeholder text
+        x: the x position of the window
+        y: the y position of the window
+        width: the width of the window
+        height: the height of the window
+        size: the size of the window
+        anch: the anchor to use, by default it is set to "center"
+    """
     entry = tk.Entry(window, font=(FONT, size), fg="grey")
     entry.insert(0, placeholder)
 
@@ -33,12 +58,39 @@ def create_input_box(window, placeholder, x, y, width, height, size, anch="cente
     return entry
 
 def create_submit_button(window, text, command, x, y, width, height):
+    """
+    Created a submit button.
+    Args:
+        window: the window to show
+        text: the text to show
+        command: the command to run, the actual action
+        x: the x position of the button
+        y: the y position of the button
+        width: the width of the button
+        height: the height of the button
+    Returns:
+        button: the component button to be used
+    """
     button = tk.Button(window, text=text, command=command, font=(FONT, 12, "bold"), bg="#e1e1e1",  cursor="hand2")
     button.place(x=x, y=y, width=width, height=height, anchor="center")
     return button
 
 
 def create_sidebar(window, x, y, width, height):
+    """
+    Creates the sidebar, the component that displays the list of connected users.
+
+    Args:
+        window: the window that is used
+        x:  the position x
+        y: the position y
+        width: the width of the sidebar
+        height: the height of the sidebar
+
+    Returns:
+        user_list: the Listbox component that is used for showing the users
+        search_entry: the Entry where a user can search for a specific user
+    """
     frame = tk.Frame(window, width=width, height=height, bg="#f0f0f0")
     frame.place(x=x, y=y)
 
@@ -66,6 +118,28 @@ def create_sidebar(window, x, y, width, height):
     return user_list, search_entry
 
 def create_chatbox(window, x, y, width, height):
+    """
+    Creates the main visual part of the chat interface.
+
+    This function assembles the message display area, the input field,
+    and the action buttons (Send, Emoji, Image).
+
+    Args:
+        window: The parent window
+        x: the x position
+        y: the y position
+        width: the width of the chatbox area
+        height: the height of the chatbox area
+
+    Returns:
+        chat_display: the Text widget where messages appear
+        msg_input: the Entry widget for typing messages
+        send_btn: the Send Button widget
+        header_label: the Label showing the current chat partner
+        emoji_btn: the Button for opening emojis
+        image_btn: the Button for sending images
+
+    """
     frame = tk.Frame(window, width=width, height=height, bg="#f0f0f0")
     frame.place(x=x, y=y)
 
@@ -99,10 +173,21 @@ def create_chatbox(window, x, y, width, height):
 
 
 def create_picker_window(parent):
+    """
+    Creates the window structure for the Emoji Picker.
+    It includes a Canvas and Scrollbar to allow scrolling through many emojis.
+
+    Args:
+        parent: The main window
+
+    Returns:
+        pop: The Toplevel window instance
+        container: The internal Frame where buttons should be placed
+    """
     title = "Emoji Picker"
     pop = tk.Toplevel(parent)
     pop.title(title)
-    center_emoji_window(pop, parent, 400, 350)
+    center_emoji_window(pop, parent, 460, 350)
 
     cvs = tk.Canvas(pop)
     bar = tk.Scrollbar(pop, orient="vertical", command=cvs.yview)

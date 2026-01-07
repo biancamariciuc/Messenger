@@ -1,3 +1,4 @@
+"""This module center different windows in the screen laptop area."""
 def center_window(window, width, height):
     """
     Function that center the main window in the center of the computer screen

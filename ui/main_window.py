@@ -9,10 +9,28 @@ from ui.logic.window_helpers import center_window, clear_window
 from ui.window_params import WIDTH, HEIGHT, TITLE_X, TITLE_Y, GAP
 from ui.ui_components import *
 
+"""The main module that starts the main window."""
 
 
 class Main_window(tk.Tk):
+    """
+    The central application class.
+
+    It manages the transition between the Login Screen and the Chat Screen.
+    It also establishes the correspondence between network events and UI updates.
+
+    """
     def __init__(self, title):
+        """
+        Initialize the main window and the network client.
+
+        Sets up the window geometry, initialize the Client connection,
+        defines the actions that happens when server sends data.
+
+        Args:
+            title: The title displayed in the window  title bar
+
+        """
         super().__init__()
         self.title(title)
         center_window(self, WIDTH, HEIGHT)
@@ -24,6 +42,11 @@ class Main_window(tk.Tk):
         self.show_login_page()
 
     def show_login_page(self):
+        """
+        Shows the initial login screen.
+
+        Clears the window, sets up the username input and the submit (connect) button.
+        """
         clear_window(self)
         create_title_box(self, "Welcome!", TITLE_X, TITLE_Y, 30)
 
@@ -34,6 +57,12 @@ class Main_window(tk.Tk):
         create_submit_button(self, "Submit", submit_action, TITLE_X, TITLE_Y + 150, 200, 40)
 
     def show_message_page(self):
+        """
+        Show the main chat screen.
+
+        Split the area in 2 parts, left side (sidebar) and right side (message area).
+        Bind each button  to their specific logic function.
+        """
         clear_window(self)
 
         sidebar_w = int(WIDTH * 0.3)

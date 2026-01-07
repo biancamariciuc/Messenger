@@ -1,0 +1,50 @@
+[
+    {
+        "sender": "iulia",
+        "receiver": "ari",
+        "timestamp": "2026-01-07 17:52:19",
+        "content": "{\"iv\": \"d711e2d6941dead9caf0b919815759a4\", \"ciphertext\": \"87ca1fdcb0496b9c3ae0349de2fa4bc9\", \"key\": \"13cdc60086c173ca241a84dbfb934358b3c975c25f1f47c553ff9d90403802231226d96adaa0ae746f076895e41e0a120e4345975139b7fa898d830cc07c9b788ae8563e21f4efa4380095e59079163b4b324811c1a2629dce5e6c658db4a08404252c46eec34fc00af61888358d7a1dd6998c103b9e5fe4e3c19941163a8903\"}"
+    },
+    {
+        "sender": "ari",
+        "receiver": "iulia",
+        "timestamp": "2026-01-07 17:52:33",
+        "content": "{\"iv\": \"582ec0e0038035eee8a8e2eb9e0e32be\", \"ciphertext\": \"4c9590e9443d83df67a5ebcfb01950a2\", \"key\": \"8f23c38e46017645c17a57f30c382bd99de54a020e1c889c92701d8a6475a65f5dd8dd52fb1752b27191900064e92452c7d021115ce58780d532eec7f6784274f8982bb235797926429527a3fb1acc4031ca5b4909b9eee455995ea91af3de24402d87b9a97a2ce94e5c6badb73eddc9a3add74ee530b2e225c1097c659b2363\"}"
+    },
+    {
+        "sender": "ari",
+        "receiver": "iulia",
+        "timestamp": "2026-01-07 17:52:38",
+        "content": "{\"iv\": \"e73cd44a61e89b7159a8b4b4588fb768\", \"ciphertext\": \"aaa76b5316ef10adb79ac214ed89268f\", \"key\": \"284bd23529a4cacc0f4c06285b24463df4e597d1e5089b2a1460dc5d20d8e5e68f6707aac8a06fbfa2d8fc52dd0cc30f0956ee843088e5929e21e4fd785acfee0531149bc245c7e7e66e45bbe09325217874c3070837418d19fcfb4ee66d7a52216da19a4f4693a449442811fafcdae5dc2db82e7b2363b24494499fca067126\"}"
+    },
+    {
+        "sender": "iulia",
+        "receiver": "ari",
+        "timestamp": "2026-01-07 17:52:44",
+        "content": "{\"iv\": \"5c94b8d3bea5b3fefc66460165fbe13d\", \"ciphertext\": \"3b9ef7bd552fec91d18216d28e3adae6\", \"key\": \"05891e34be5bbbb5197aa7efe2fedb3536aa0cfa545f1931567b004647c5f20da5753d9d300666ed78a736570e2d9c6a2405741ea5f960f7d0e50c0a90c82684554a0632586b3d6c8ee02c8a341724b4de09f3840e8ecbd57411f0cac07666e7216f8c23a5391d4581f22ea3a36b1845512d5c39370f466de7e81e08018769b1\"}"
+    },
+    {
+        "sender": "ari",
+        "receiver": "iulia",
+        "timestamp": "2026-01-07 17:52:50",
+        "content": "{\"iv\": \"f70049ff64a46a1920a16ce17cb6c956\", \"ciphertext\": \"256f33555ddf9fcc5d4e5b411be9eb8c\", \"key\": \"d4a31e5b336b27ad7fceb2552c7b135be5f461ec1007d5a3a32b3d5e330acb4ad30a6692741a3cdb0c2a65f9c5548297760238e3665cae5f7fc02185407c59750cac17d4deb843815e6364eac2db074ba17fb23c05ffe37f6801fa4f6185f6e5ff68e5ac3b74960116ed93c66cb2ab8b443f138602a76d3e48d60cd9db06fb34\"}"
+    },
+    {
+        "sender": "iulia",
+        "receiver": "ari",
+        "timestamp": "2026-01-07 17:52:54",
+        "content": "{\"iv\": \"e44132057ad076e78b2292edadf11906\", \"ciphertext\": \"4376928bd79a05e74588991d3fb3f555\", \"key\": \"fb4c8aa4771cb9cf4b2bf3bf58ee6c7192f2dce6d4272c62deb212684005fab1decfbebeec5731bea56204260decfb018f1fea6f1c34b8d10646a7ca39989cf3afe009f0bf422b010ef03f32bd786c7d305b2a7ca39ce1d21545d3c55738a55271c1189460c4985aee7d576911321490420cb2bfa5ac97f4196d5e33d62ca0c6\"}"
+    },
+    {
+        "sender": "iulia",
+        "receiver": "ari",
+        "timestamp": "2026-01-07 17:53:05",
+        "content": "{\"iv\": \"f770aec2bbffe74c7b1dddd2d02efdd3\", \"ciphertext\": \"e39ffe5d62aae780ba7299a1589a37d2\", \"key\": \"fb6804c7c572ee8b9027bd8a4446bcbb31b154d72bcab4ed3f593555c662fae420cfe4dfd3d3c1c050e911c15d2d67e5f4673cfd711d9eca55b061aa166180ee82cb0271ff2b1f66a35eec9107265e1a8d36e7cd923573f13f468e3a7cf04b8ebd9066f310f90e42e286e70bd0bf997fd7838e48119d85b4dca405a1a9c20165\"}"
+    },
+    {
+        "sender": "ari",
+        "receiver": "iulia",
+        "timestamp": "2026-01-07 17:53:20",
+        "content": "{\"iv\": \"120b533d38670f4e3767d2d65fab99ca\", \"ciphertext\": \"9b6308193e318057dc1592b8abe620c6\", \"key\": \"2a0db22a212bd2eb3f0930e9bb8b279b9eb9664015e0b2ea5e7763528ffc32e847101f28b5e7ffda406520aa3c084bf8ea243ed69d9a5e18ba87030f094bee50eaa71f58ae341aaa24e1827cd0b32a2bb7ddc3cf07927760121177e000a78ee2ac09596c689291fe7d93b7d064b23ad793d4a4c156b7b87abcfb4e5bb3bb3f87\"}"
+    }
+]
